@@ -155,6 +155,52 @@
     });
   }
 
+  /* Main Sidebar Toggle
+  -------------------------------------------------------*/
+
+  function sidebarShow(e) {
+    var mainSidebar = $('.main-sidebar'),
+        mainSidebarWidth = mainSidebar.width();
+
+    $('.main-sidebar').animate({
+      right: 0
+    });
+
+    $('.main-wrapper').animate({
+      marginLeft: -400
+    });
+
+    $('body').prepend('<div class="sidebar-overlay"></div>');
+    $('.sidebar-overlay')
+      .fadeIn(300)
+      .on('click', sidebarHide);
+
+    e.preventDefault();    
+  }
+
+
+  function sidebarHide(e) {
+    var mainSidebar = $('.main-sidebar'),
+        mainSidebarWidth = mainSidebar.width();
+
+    mainSidebar.animate({
+      right: -mainSidebarWidth
+    });
+
+    $('.main-wrapper').animate({
+      marginLeft: 0
+    });
+
+    $('.sidebar-overlay').fadeOut(300, function(){
+      $(this).remove();
+    });
+
+    e.preventDefault();    
+  }
+
+  $('.sidebar-trigger').on('click', sidebarShow);
+  $('.main-sidebar-btn-close').on('click', sidebarHide);
+
   /* Full-screen Hero Height
   -------------------------------------------------------*/
   function heroContainerHeight() {

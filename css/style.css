@@ -2105,6 +2105,108 @@ input.main-zip-code-input:-ms-input-placeholder {
   color: #E94858;
 }
 
+/* Main Sidebar Styles
+-------------------------------------------------------*/
+.sidebar-overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, 0.5);
+  z-index: 998;
+}
+
+aside.main-sidebar {
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 400px;
+  padding: 100px 0 50px;
+  background: #171819;
+  z-index: 999;
+}
+
+@media screen and (max-width: 480px) {
+  aside.main-sidebar {
+    width: 100%;
+  }
+}
+
+a.main-sidebar-btn-close {
+  position: absolute;
+  display: block;
+  top: 35px;
+  right: 30px;
+  width: 25px;
+  height: 26px;
+  color: #fff;
+}
+
+.main-sidebar-nav-item {
+  display: block;
+  border-bottom: 1px solid #28292b;
+}
+
+.main-sidebar-nav-wrap {
+  margin-bottom: 50px;
+}
+
+.main-sidebar-nav-item a {
+  display: block;
+  padding: 0 30px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 50px;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.main-sidebar-nav-item a:hover {
+  opacity: 1;
+}
+
+.main-sidebar-social-buttons {
+  margin: 0 0 50px 25px;
+  font-size: 0;
+}
+
+.main-sidebar-social-buttons-item {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.main-sidebar-social-buttons-item button.btn.btn-lg {
+  margin: 0;
+  padding: 0;
+  width: 165px;
+  font-size: 14px;
+  color: #171819;
+  background: #e5e4e5;
+  border-color: #7e7e7f;
+}
+
+.main-sidebar-location {
+  padding: 0 30px;
+}
+
+.main-sidebar-location a {
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.main-sidebar-location a:hover {
+  opacity: 1;
+}
+
 /*-------------------------------------------------------*/
 /* Navigation Mobile Styles
 /*-------------------------------------------------------*/
