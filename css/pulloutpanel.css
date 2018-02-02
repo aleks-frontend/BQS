@@ -1,0 +1,238 @@
+/*
+Item Name : Pull Out Content Panel
+Author URI : http://codecanyon.net/user/Pixelworkshop
+Version : 1.12
+*/
+
+/*
+
+TABLE OF CONTENTS
+
+01 MENU CONTAINER
+02 TOGGLE BUTTON
+03 PANEL CAROUSEL
+04 PANEL CONTENT
+   1. Basic Typography
+   2. Default Lists
+   3. Icons Lists
+   4. Styled Lists
+   5. Styled Paragraphs
+   6. Videos & Images
+04 FORM ELEMENTS
+06 PANEL TOGGLES
+
+*/
+
+
+
+
+/*  _______________________________________________
+
+    01 MENU CONTAINER
+    _______________________________________________  */
+
+
+
+
+
+.pocp_right {
+    position: fixed;
+    top:0;
+    height: 100%;
+    z-index: 9999;
+    line-height: 50%;
+	line-height:21px;
+    -webkit-transition: all 0.4s 0.2s;
+    -moz-transition: all 0.4s 0.2s;
+    -o-transition: all 0.4s 0.2s;
+    transition: all 0.4s 0.2s;
+}
+
+.pocp_right {
+    right:-275px;
+}
+.pocp_left.pocp_show {
+    left:0;
+}
+.pocp_right.pocp_show  {
+    right:0;
+}
+.pocp {
+    position: relative;
+    width: 275px;
+    height: 100%;
+    background: #f6f6f6;
+    color: #767676;
+	-webkit-box-shadow: inset rgba(0,0,0,.25) -6px 0 -8px;
+    -moz-box-shadow: inset rgba(0,0,0,.25) -6px 0 -8px;
+    box-shadow: inset rgba(0,0,0,.25) -6px 0 -8px;
+	border-left: 1px solid #d8dbdb;
+}
+
+/* CSS3 3D Animations - Chrome & Safari only */
+
+
+.pocp_right {
+    -webkit-perspective: 500;
+}
+.pocp_right .pocp {
+    -webkit-transform-origin: 100% 0%;
+    -webkit-transform: translateX(50%) slideY(-90deg);
+}
+.pocp_right .pocp_active {
+    -webkit-transform: translateX(0) slideY(0deg);
+}
+
+/* Optionnal overlay effect */
+
+#pocp_overlay {
+    background:rgba(0,0,0,0.6);
+    position:fixed;
+    display: none;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:9998;
+}
+
+
+
+
+/*  _______________________________________________
+
+    02 TOGGLE BUTTON
+    _______________________________________________  */
+
+
+
+
+.pocp_button {
+    z-index: 9999;
+   
+}
+
+
+
+
+
+/*  _______________________________________________
+
+    03 PANEL CAROUSEL
+    _______________________________________________  */
+
+
+
+
+
+.pocp a {
+    text-decoration: none;
+    color: #888;
+    cursor: pointer;
+    -webkit-transition: color 0.2s;
+    -moz-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+}
+.pocp a:hover {
+    color: #82BF2B;
+}
+
+/* 2. Default Lists */
+
+.pocp ul {
+    list-style: square;
+    padding-left: 16px;
+    margin-bottom: 21px;
+	margin-left:0;
+}
+.pocp ol {
+    padding-left: 16px;
+    margin-bottom: 21px;
+	margin-left:0;
+}
+
+/* 3. Icons Lists */
+
+.pocp .pocp_icons {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 21px -20px;
+}
+.pocp .pocp_icons li {
+    padding: 0 20px;
+    text-align: left;
+    border-radius: 0 3px 3px 0;
+    -webkit-transition: background 0.3s;
+    -moz-transition: background 0.3s;
+    -o-transition: background 0.3s;
+    transition: background 0.3s;
+}
+.pocp .pocp_icons li:hover {
+    background: #d8dbdb;
+}
+.pocp .pocp_icons a {
+    color: #767676;
+}
+.pocp .pocp_icons i {
+    font-size: 64px;
+    width: 24px;
+    float: left;
+}
+.pocp .pocp_icons li,
+.pocp .pocp_icons i {
+    line-height: 50%;
+}
+
+/* 4. Styled Lists */
+
+.pocp .panel_list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+.pocp .panel_list li {
+}
+.pocp .panel_list li a {
+    padding: 0 0 0 20px;
+    width: 100%;
+    text-align: left;
+    display: inline-block;
+    float: left;
+    font-size: 15px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+	height:54px;
+	line-height:54px;
+	vertical-align: middle;
+	
+	
+	
+	
+}
+.pocp .panel_list li i {
+    margin-right: 15px;
+    font-size: 24px;
+	line-height:54px;
+	display: inline-block;
+	vertical-align: middle;
+}
+    .pocp .panel_list li:first-child a {
+        border-top: none;
+    }
+    .pocp .panel_list li:last-child a {
+        border-bottom: none;
+	
+    }
+.pocp .panel_list li a:hover {
+    cursor: pointer;
+    background: #eee;
+}
+.pocp .panel_list .new {
+    color:#f22;
+    font-size: 65%;
+    vertical-align: super
+}
+

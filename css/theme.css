@@ -1,0 +1,303 @@
+.background-image-holder {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover !important;
+  background-position: left !important;
+  z-index: 0;
+  transition: opacity .3s linear;
+  -webkit-transition: opacity .3s linear;
+  opacity: 0;
+  background: #252525;
+}
+.background-image-holder:not([class*='col-']) {
+  width: 100%;
+}
+.background-image-holder.background--bottom {
+  background-position: 50% 100% !important;
+}
+.background-image-holder.background--top {
+  background-position: 50% 0% !important;
+}
+.image--light .background-image-holder {
+  background: none;
+}
+.background-image-holder img {
+  display: none;
+}
+
+.imagebg {
+  position: relative;
+}
+.imagebg .container {
+  z-index: 2;
+}
+.imagebg .container:not(.pos-absolute) {
+  position: relative;
+}
+
+.parallax {
+  overflow: hidden;
+}
+.parallax .background-image-holder {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+}
+
+
+
+/**! 27. Image Blocks **/
+.imageblock {
+  position: relative;
+  padding: 0;
+}
+.imageblock > .container,
+.imageblock > div[class*='col-']:not(.imageblock__content) {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  float: none;
+  overflow: hidden;
+}
+.imageblock.imageblock--lg > .container,
+.imageblock.imageblock--lg > div[class*='col-']:not(.imageblock__content) {
+  padding-top: 0;
+  padding-bottom: 0;
+  float: none;
+  overflow: hidden;
+}
+.imageblock .imageblock__content {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 2;
+  padding: 0;
+}
+.imageblock .imageblock__content .slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+.imageblock .imageblock__content .slider .slides > li {
+  padding: 0;
+  min-height: 100%;
+  position: absolute !important;
+}
+.imageblock.allow-overflow .imageblock__content {
+  overflow: visible;
+}
+@media all and (max-height: 728px) {
+  .imageblock > .container,
+  .imageblock > div[class*='col-']:not(.imageblock__content) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+@media all and (max-width: 767px) {
+  .imageblock[class*='space-'] {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .imageblock .imageblock__content {
+    position: relative;
+    min-height: 18.57142857em;
+  }
+  .imageblock > .container,
+  .imageblock > div[class*='col-']:not(.imageblock__content) {
+    padding-top: 0;
+    padding-bottom: 0;
+    float: none;
+    overflow: hidden;
+  }
+  .imageblock.imageblock--lg > .container,
+  .imageblock.imageblock--lg > div[class*='col-']:not(.imageblock__content) {
+    padding-top: 0;
+    padding-bottom: 0;
+    float: none;
+    overflow: hidden;
+  }
+}
+
+/**! 30. Transitions **/
+[class*='transition--'] {
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  opacity: 0;
+}
+[class*='transition--'].transition--active {
+  opacity: 1;
+}
+.transition--scale {
+  transform: scale(0.98);
+  -webkit-transform: scale(0.98);
+}
+.transition--scale.transition--active {
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+}
+.transition--slide {
+  transform: translate3d(200px, 0, 0);
+  -webkit-transform: translate3d(200px, 0, 0);
+  transform: translate3d(30vw, 0, 0);
+  -webkit-transform: translate3d(30vw, 0, 0);
+}
+.transition--slide.transition--active {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+/**! 31. Switchable Sections **/
+.switchable {
+  position: relative;
+}
+.switchable div[class*='col-']:first-child {
+  float: left;
+  right: auto;
+}
+.switchable div[class*='col-']:first-child:not([class*='pull']):not([class*='push']) {
+  left: 0;
+}
+.switchable div[class*='col-']:last-child {
+  float: right;
+  left: auto;
+}
+.switchable div[class*='col-']:last-child:not([class*='pull']):not([class*='push']) {
+  right: 0;
+}
+.switchable.switchable--switch div[class*='col-']:first-child {
+  float: right;
+  right: 0;
+  left: auto;
+}
+.switchable.switchable--switch div[class*='col-']:first-child:not([class*='pull']):not([class*='push']) {
+  left: auto;
+}
+.switchable.switchable--switch div[class*='col-']:last-child {
+  float: left;
+  left: 0;
+  right: auto;
+}
+.switchable .switchable__text {
+  margin-top: 3.71428571em;
+}
+.switchable > div[class*='col-'] {
+  padding: 0;
+}
+
+.border--round .background-image-holder {
+  border-radius: 4px;
+}
+.border--round [data-scrim-top]:before,
+.border--round [data-scrim-bottom]:before,
+.border--round [data-overlay]:before {
+  border-radius: 4px;
+}
+.imageblock.border--round .background-image-holder {
+  border-radius: 6px 0 0 6px;
+}
+@media all and (max-width: 767px) {
+  .imageblock.border--round .background-image-holder {
+    border-radius: 6px 6px 0 0;
+  }
+}
+
+section.parallax .row .background-image-holder {
+  transform: none !important;
+  top: 0 !important;
+}
+
+.dropdown .dropdown__content .background-image-holder {
+  border-radius: 6px 0 0 6px;
+}
+
+
+.boxed .background-image-holder {
+  border-radius: 4px;
+}
+
+
+.feature-7 .background-image-holder {
+  border-radius: 4px;
+}
+
+.row--gapless .feature-7 .background-image-holder {
+  border-radius: 0;
+}
+
+
+@media all and (min-width: 768px) {
+  .background-image-holder .map-container,
+  .imageblock__content .map-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.no-pad {
+  padding: 0px;
+}
+.no-pad-top {
+  padding-top: 0px !important;
+}
+.no-pad-left {
+  padding-left: 0px;
+}
+.no-pad-right {
+  padding-right: 0px;
+}
+.no-pad-bottom {
+  padding-bottom: 0px;
+}
+
+
+
+.feature-box {
+  padding: 64px 40px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 250px;
+}
+
+.feature-box .inner {
+  width: 66.66666%;
+  position: relative;
+  z-index: 3;
+}
+
+.feature-box.contained {
+  padding: 40px;
+  overflow: hidden;
+}
+.feature-box.contained .inner {
+  width: 100%;
+}
+
+  .feature-box {
+    padding: 48px 32px;
+  }
+  .feature-box .inner {
+    width: 100%;
+  }
+  .no-pad-left {
+    padding-left: 15px;
+  }
+
+

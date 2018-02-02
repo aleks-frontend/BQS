@@ -1,0 +1,33 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="74.5" height="97.9" viewBox="0 0 74.5 97.9">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #43d3e8;
+      }
+
+      .cls-2 {
+        fill: #242d3c;
+      }
+    </style>
+  </defs>
+  <title>globe</title>
+  <g>
+    <path class="cls-1" d="M74,51.5a2,2,0,1,0-2,2A2,2,0,0,0,74,51.5Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-1" d="M56.6,58.2a2,2,0,0,0,0,4h13a32,32,0,0,0,5.3-4Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-1" d="M64.3,16.4a2,2,0,0,0,2,2h2.2a2,2,0,0,1,0,4H61.4a2,2,0,0,0,0,4H84a31.7,31.7,0,0,0-1.4-4H80.8a2,2,0,0,1-.2-3.9,32.7,32.7,0,0,0-2.9-4H66.3A2,2,0,0,0,64.3,16.4Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-1" d="M78.8,41.6H70.2a2,2,0,0,1,0-4,2,2,0,1,0,0-4H43.1a2,2,0,1,0,0,4h9.1a2,2,0,0,1,0,4,2,2,0,0,0,0,4h1.4a2,2,0,1,1,0,4H48.1a2,2,0,1,0,0,4h16a2,2,0,1,0,0-4H62.6a2,2,0,0,1,0-4H78.8a2,2,0,0,0,0-4Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-1" d="M24.6,21.7H43.7a2,2,0,0,0,0-4H37.6a2,2,0,0,1,0-4H53.9a2,2,0,0,0,0-4H34A31.9,31.9,0,0,0,24.6,21.7Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-1" d="M48.9,19.7a2,2,0,1,0,2-2A2,2,0,0,0,48.9,19.7Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-1" d="M36.6,52.7a2,2,0,0,0-2-2h-.7a2,2,0,0,1,0-4H40a2,2,0,0,0,0-4H22.7a31.6,31.6,0,0,0,5.9,11.9h6A2,2,0,0,0,36.6,52.7Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-1" d="M34.3,31.5a2,2,0,1,0,0-4H22.6a31.7,31.7,0,0,0-.7,4H34.3Z" transform="translate(-12.7 -1.1)"/>
+  </g>
+  <g>
+    <path class="cls-2" d="M53.4,68.5A33.6,33.6,0,1,1,87,34.9,33.6,33.6,0,0,1,53.4,68.5ZM53.4,5A29.9,29.9,0,1,0,83.3,34.9,30,30,0,0,0,53.4,5Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-2" d="M53.4,75.6A40.7,40.7,0,0,1,24.6,6.1l2.6,2.6A37.1,37.1,0,1,0,79.6,61.1l2.6,2.6A40.4,40.4,0,0,1,53.4,75.6Z" transform="translate(-12.7 -1.1)"/>
+    <rect class="cls-2" x="24.1" y="0.3" width="3.6" height="14.28" transform="translate(-10.4 19.4) rotate(-45)"/>
+    <rect class="cls-2" x="79.1" y="55.2" width="3.6" height="14.28" transform="translate(-33.2 74.4) rotate(-45)"/>
+    <rect class="cls-2" x="38.7" y="72.7" width="3.6" height="11.11"/>
+    <path class="cls-2" d="M71.5,92.8H35.1V83.1H71.5v9.8ZM38.7,89.2H67.9V86.7H38.7Z" transform="translate(-12.7 -1.1)"/>
+    <path class="cls-2" d="M80.6,98.9H26V89.2H80.6Zm-51-3.6H77V92.8H29.6Z" transform="translate(-12.7 -1.1)"/>
+  </g>
+</svg>
