@@ -159,15 +159,11 @@
   -------------------------------------------------------*/
 
   function sidebarShow(e) {
-    var mainSidebar = $('.main-sidebar'),
+    var mainSidebar = $('#' + $(this).data('sidebar')), // Selecting the Sidebar depending on the 'data-sidebar' value of the sidebar trigger
         mainSidebarWidth = mainSidebar.width();
 
-    $('.main-sidebar').animate({
+    mainSidebar.animate({
       right: 0
-    });
-
-    $('.main-wrapper').animate({
-      marginLeft: 0
     });
 
     $('body').prepend('<div class="sidebar-overlay"></div>');
@@ -187,10 +183,6 @@
       right: -mainSidebarWidth
     });
 
-    $('.main-wrapper').animate({
-      marginLeft: 0
-    });
-
     $('.sidebar-overlay').fadeOut(300, function(){
       $(this).remove();
     });
@@ -203,16 +195,36 @@
 	
 	
 	$(window).ready(function(){
-	$('.sidebar-trigger').click(function(){
-	$('body').width($('body').width());
-	$('body').css('overflow', 'hidden');
-	$('.sidebar-overlay').css('display', 'block');
+  	$('.sidebar-trigger').click(function(){
+    	$('body').width($('body').width());
+    	$('body').css('overflow', 'hidden');
+    	$('.sidebar-overlay').css('display', 'block');
+  	});
+  	$('.main-sidebar-btn-close').click(function(){
+    	$('body, .sidebar-overlay').removeAttr('style');
+  	});
 	});
-	$('.main-sidebar-btn-close').click(function(){
-	$('body, .sidebar-overlay').removeAttr('style');
-	});
-	});
+
+  /* Toggling the visibility of the inner dropdowns inside the sidebar
+  -------------------------------------------------------*/
+
+  function innerDropdownToggler() {
+    $(this).siblings('.is-main-sidebar-inner-dropdown').slideToggle(300);
+  }
+
+  $('.js-inner-dropdown-trigger').on('click', innerDropdownToggler);
 	
+  $('.is-main-sidebar-inner-dropdown').find('li a').on('click', function(e) {
+    var $this = $(this);
+    var newTextVal = $(this).text();
+    
+    $this
+      .closest('.is-main-sidebar-inner-dropdown').slideUp(300)
+      .siblings('.js-inner-dropdown-trigger').find('span').text(newTextVal);
+
+    e.preventDefault();
+  });
+
 
   /* Full-screen Hero Height
   -------------------------------------------------------*/

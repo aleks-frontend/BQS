@@ -28,59 +28,59 @@
 
 <body class="relative">
 
-<aside class="main-sidebar">
+<aside class="main-sidebar" id="main-menu-sidebar">
 	<img alt="Logo" class="main-sidebar-logo" src="img/logo_footer.svg">
-	<a href="#" class="main-sidebar-btn-close">
+	<a href="#" class="main-sidebar-btn-close main-sidebar-custom-btn"">
 		<i class="icon icon-close-x pxio-xs"></i>
 	</a>
 	<nav class="main-sidebar-nav">
 		<ul class="main-sidebar-nav-wrap">
 			<li class="main-sidebar-nav-item">
-				<a href="#">Home page
+				<a href="#" class="main-sidebar-nav-item-btn">Home page
 				<i class="icon icon-home pxio-xs"></i>				
 				</a>
 			</li>
 			<li class="main-sidebar-nav-item">
-				<a href="#">Shopping cart
-				<i class="icon icon-shopping-cart-secondary pxio-xs"></i>
+				<a href="#" class="main-sidebar-nav-item-btn">Shopping cart
+					<i class="icon icon-shopping-cart-secondary pxio-xs"></i>
 				</a>
 			</li>
 			<li class="main-sidebar-nav-item">
-				<a href="#" class="main-sidebar-nav-category-label">Flowers &amp; plants</a>
+				<a href="#" class="main-sidebar-nav-category-label main-sidebar-nav-item-btn">Flowers &amp; plants</a>
 				<ul class="main-sidebar-nav-category-wrap">
 					<li class="main-sidebar-nav-category-item">
-						<a href="#">Alstroemerias</a>
+						<a href="#" class="main-sidebar-nav-item-btn">Alstroemerias</a>
 					</li>
 					<li class="main-sidebar-nav-category-item">
-						<a href="#">Roses</a>
+						<a href="#" class="main-sidebar-nav-item-btn">Roses</a>
 					</li>
 					<li class="main-sidebar-nav-category-item">
-						<a href="#">Carnations</a>
+						<a href="#" class="main-sidebar-nav-item-btn">Carnations</a>
 					</li>
 					<li class="main-sidebar-nav-category-item">
-						<a href="#">Iris</a>
+						<a href="#" class="main-sidebar-nav-item-btn">Iris</a>
 					</li>
 				</ul><!-- end main-sidebar-nav-category-wrap -->
 			</li>
 			<li class="main-sidebar-nav-item">
-				<a href="#" class="main-sidebar-nav-category-label">Events planning</a>
+				<a href="#" class="main-sidebar-nav-category-label main-sidebar-nav-item-btn">Events planning</a>
 				<ul class="main-sidebar-nav-category-wrap">
 					<li class="main-sidebar-nav-category-item">
-						<a href="#">Weddings</a>
+						<a href="#" class="main-sidebar-nav-item-btn">Weddings</a>
 					</li>
 					<li class="main-sidebar-nav-category-item">
-						<a href="#">Corporate</a>
+						<a href="#" class="main-sidebar-nav-item-btn">Corporate</a>
 					</li>
 				</ul><!-- end main-sidebar-nav-category-wrap -->
 			</li>
 			<li class="main-sidebar-nav-item">
-				<a href="#">Vases &amp; more</a>
+				<a href="#" class="main-sidebar-nav-item-btn">Vases &amp; more</a>
 			</li>
 		</ul><!-- end main-sidebar-nav-wrap -->
 
 		<ul class="main-sidebar-nav-wrap">
 			<li class="main-sidebar-nav-item">
-				<a href="#">Signup
+				<a href="#" class="main-sidebar-nav-item-btn">Signup
 				<i class="icon icon-pencil-alt pxio-xs"></i>
 				</a>
 			</li>
@@ -97,22 +97,22 @@
 
 		<ul class="main-sidebar-nav-wrap">
 			<li class="main-sidebar-nav-item">
-				<a href="#">Our company
+				<a href="#" class="main-sidebar-nav-item-btn">Our company
 				<i class="icon icon-company pxio-xs"></i>
 				</a>
 			</li>
 			<li class="main-sidebar-nav-item">
-				<a href="#">Get in touch
+				<a href="#" class="main-sidebar-nav-item-btn">Get in touch
 				<i class="icon icon-headset pxio-xs"></i>
 				</a>
 			</li>
 			<li class="main-sidebar-nav-item">
-				<a href="#">Legal disclosure
+				<a href="#" class="main-sidebar-nav-item-btn">Legal disclosure
 				<i class="icon icon-attached-file pxio-xs"></i>
 				</a>
 			</li>
 			<li class="main-sidebar-nav-item">
-				<a href="#">My account
+				<a href="#" class="main-sidebar-nav-item-btn">My account
 				<i class="icon icon-user pxio-xs"></i>
 				</a>
 			</li>
@@ -125,6 +125,123 @@
 		</a>
 	</div><!-- end main-sidebar-location -->
 </aside>
+
+<aside class="main-sidebar" id="shopping-cart-sidebar">
+	<img alt="Logo" class="main-sidebar-logo" src="img/logo_footer.svg">
+	<a href="#" class="main-sidebar-btn-close main-sidebar-custom-btn">
+		<i class="icon icon-close-x pxio-xs"></i>
+	</a>
+	<nav class="main-sidebar-nav">
+		<ul class="main-sidebar-nav-wrap">
+			<li class="main-sidebar-nav-item">
+				<a href="#" class="main-sidebar-nav-item-btn">Home page
+				<i class="icon icon-home pxio-xs"></i>				
+				</a>
+			</li>
+			<li class="main-sidebar-nav-item">
+				<a href="#" class="main-sidebar-nav-item-btn">Shopping cart
+				<i class="icon icon-shopping-cart-secondary pxio-xs"></i>
+				</a>
+			</li>			
+		</ul><!-- end main-sidebar-nav-wrap -->
+
+		<ul class="main-sidebar-nav-wrap main-sidebar-nav-shopping-cart-items">
+			<li class="main-sidebar-nav-item has-big-bottom-margin">
+				<div class="shopping-cart-item-main-info">
+					<img src="img/shop/item_lg_5.jpg" alt="Shopping cart item 1" />
+					<span class="shopping-cart-item-name">Snow white bowl</span>
+					<span class="shopping-cart-item-price">$159.99</span>
+					<a href="#" class="main-sidebar-custom-btn main-sidebar-cart-item-delete">
+						<i class="icon icon-close-x pxio-xs"></i>
+					</a>
+				</div><!-- end shopping-cart-item-main-info -->
+
+				<div class="shopping-cart-item-footer">
+					<a href="#" class="main-sidebar-nav-item-btn is-not-full-width-btn js-inner-dropdown-trigger">
+						<i class="icon icon-add-location pxio-xs pull-left"></i> <span>Delivery location</span>
+					</a>	
+					<a href="#" class="main-sidebar-custom-btn main-sidebar-btn-stick-top-right">
+						<i class="icon icon-chat-square-alt pxio-xs"></i>
+					</a>
+					<ul class="main-sidebar-nav-wrap has-no-bottom-margin is-main-sidebar-inner-dropdown">
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">Pick up at store</a>
+						</li>
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">New address</a>
+						</li>			
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">333 Anthony Trail
+								<i class="icon icon-geolocation-pin pxio-xs"></i>
+							</a>
+						</li>			
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">1020 Beechwood Dr
+								<i class="icon icon-geolocation-pin pxio-xs"></i>
+							</a>
+						</li>			
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">1230 Grand ave
+								<i class="icon icon-geolocation-pin pxio-xs"></i>
+							</a>
+						</li>			
+					</ul><!-- end main-sidebar-nav-wrap -->
+				</div><!-- end shopping-cart-item-footer -->
+			</li>
+			<li class="main-sidebar-nav-item has-big-bottom-margin">
+				<div class="shopping-cart-item-main-info">
+					<img src="img/shop/item_lg_3.jpg" alt="Shopping cart item 1" />
+					<span class="shopping-cart-item-name">Snow white bowl</span>
+					<span class="shopping-cart-item-price">$159.99</span>
+					<a href="#" class="main-sidebar-custom-btn main-sidebar-cart-item-delete">
+						<i class="icon icon-close-x pxio-xs"></i>
+					</a>
+				</div><!-- end shopping-cart-item-main-info -->
+
+				<div class="shopping-cart-item-footer">
+					<a href="#" class="main-sidebar-nav-item-btn is-not-full-width-btn js-inner-dropdown-trigger">
+						<i class="icon icon-add-location pxio-xs pull-left"></i> <span>Delivery location</span>
+					</a>	
+					<a href="#" class="main-sidebar-custom-btn main-sidebar-btn-stick-top-right">
+						<i class="icon icon-chat-square-alt pxio-xs"></i>
+					</a>
+					<ul class="main-sidebar-nav-wrap has-no-bottom-margin is-main-sidebar-inner-dropdown">
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">Pick up at store</a>
+						</li>
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">New address</a>
+						</li>			
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">333 Anthony Trail
+								<i class="icon icon-geolocation-pin pxio-xs"></i>
+							</a>
+						</li>			
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">1020 Beechwood Dr
+								<i class="icon icon-geolocation-pin pxio-xs"></i>
+							</a>
+						</li>			
+						<li class="main-sidebar-nav-item main-sidebar-has-darker-bottom-border">
+							<a href="#" class="main-sidebar-nav-item-btn">1230 Grand ave
+								<i class="icon icon-geolocation-pin pxio-xs"></i>
+							</a>
+						</li>			
+					</ul><!-- end main-sidebar-nav-wrap -->
+				</div><!-- end shopping-cart-item-footer -->
+			</li>
+		</ul><!-- end main-sidebar-nav-shopping-cart-items -->
+
+		<ul class="main-sidebar-nav-wrap">
+			<li class="main-sidebar-nav-item">
+				<a href="#" class="main-sidebar-nav-item-btn">Mastercard****5554
+				<i class="icon icon-secured-lock pxio-xs"></i>
+				</a>
+			</li>
+		</ul><!-- end main-sidebar-nav-wrap -->		
+	</nav>
+</aside>
+
 
 <main class="main-wrapper">
 
@@ -192,11 +309,11 @@
 </li>
 <li class="">
 <a href="#" class="txt_color_black">
-<i class="icon icon-shopping-cart-secondary pxio-xs"></i>
+<i class="icon icon-shopping-cart-secondary pxio-xs sidebar-trigger" data-sidebar="shopping-cart-sidebar"></i>
 </a>
 </li>               
 <li class="">
-<a href="#" class="txt_color_black sidebar-trigger">
+<a href="#" class="txt_color_black sidebar-trigger" data-sidebar="main-menu-sidebar">
 <i class="icon icon-menu pxio-xs"></i>
 </a>
 </li> 

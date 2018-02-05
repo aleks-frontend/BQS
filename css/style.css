@@ -2120,7 +2120,7 @@ input.main-zip-code-input:-ms-input-placeholder {
 
 aside.main-sidebar {
   position: fixed;
-  overflow: auto;
+  overflow-y: scroll;
   top: 0;
   bottom: 0;
   right: -100%;
@@ -2144,12 +2144,28 @@ aside.main-sidebar {
   max-height: 40px;
 }
 
-a.main-sidebar-btn-close {
+a.main-sidebar-custom-btn {
   position: absolute;
   display: block;
+  color: #fff;  
+  opacity: 0.8;
+}
+
+a.main-sidebar-custom-btn:hover {
+  opacity: 1;
+  color: #E94858;
+}
+
+a.main-sidebar-btn-close {
   top: 40px;
   right: 30px;
-  color: #fff;
+}
+
+a.main-sidebar-cart-item-delete {
+  top: 50%;
+  right: 30px;
+  font-size: 13px;
+  transform: translateY(-50%);
 }
 
 .main-sidebar-nav-item {
@@ -2157,11 +2173,68 @@ a.main-sidebar-btn-close {
   border-bottom: 1px solid #28292b;
 }
 
+.main-sidebar-nav-item:last-child {
+  border: none;
+}
+
+.main-sidebar-has-darker-bottom-border {
+  border-bottom-color: #171819;
+}
+
+.shopping-cart-item-main-info {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 0 30px 0 110px;
+  min-height: 75px;
+}
+
+.shopping-cart-item-main-info img {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 65px;
+  height: 75px;
+}
+
+.shopping-cart-item-main-info span {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.shopping-cart-item-footer {
+  position: relative;
+}
+
+a.main-sidebar-btn-stick-top-right {
+  padding: 5px 10px;
+  top: 10px;
+  right: 20px;
+}
+
 .main-sidebar-nav-wrap {
   margin-bottom: 50px;
 }
 
-.main-sidebar-nav-item a {
+.has-big-bottom-margin {
+  margin-bottom: 50px;
+}
+
+.has-no-bottom-margin {
+  margin-bottom: 0;
+}
+
+.is-main-sidebar-inner-dropdown {
+  display: none;
+  padding: 0 30px;
+  background: #28292b;
+}
+
+.main-sidebar-nav-item-btn {
   display: block;
   padding: 0 30px;
   height: 50px;
@@ -2173,12 +2246,21 @@ a.main-sidebar-btn-close {
   text-transform: uppercase;
 }
 
-.main-sidebar-nav-item a > i {
+.is-not-full-width-btn {
+  width: 320px;
+}
+
+.main-sidebar-nav-item-btn > i {
   line-height: 50px;
   float: right;
 }
 
-.main-sidebar-nav-item a:hover {
+.main-sidebar-nav-item-btn > i.pull-left {
+  float: left;
+  margin-right: 10px;
+}
+
+.main-sidebar-nav-item-btn:hover {
   opacity: 1;
 }
 
