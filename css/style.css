@@ -1217,7 +1217,7 @@ header .flex-child.flex-right {
   font-weight: 400;
   letter-spacing: 0.05em;
   color: #000000;
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 10px;
   line-height: 100px;
 }
@@ -1453,7 +1453,7 @@ header .flex-child.flex-right {
 .navbar-right-nav li {
   display: table-cell;
   vertical-align: middle;
-  font-size: 18px; 
+  font-size: 16px; 
   font-weight: 400;
   padding-left: 25px;
   height: 85px;
@@ -1779,7 +1779,7 @@ input.main-zip-code-input:-ms-input-placeholder {
   line-height: 1;
   color: #000000;
   padding: 15px 15px;
-  border-radius: 4px;
+  border-radius: 5px;
   background: transparent;
   border: 1px solid #A8ACAD;
   
@@ -1787,7 +1787,7 @@ input.main-zip-code-input:-ms-input-placeholder {
 
 .nav-register a:after {
   background-color: #A8ACAD;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .nav-register span {
@@ -2136,13 +2136,19 @@ aside.main-sidebar {
   }
 }
 
+.main-sidebar-logo {
+  position: absolute;
+  display: block;
+  top: 30px;
+  left: 30px;
+  max-height: 40px;
+}
+
 a.main-sidebar-btn-close {
   position: absolute;
   display: block;
-  top: 35px;
+  top: 40px;
   right: 30px;
-  width: 25px;
-  height: 26px;
   color: #fff;
 }
 
@@ -2159,12 +2165,17 @@ a.main-sidebar-btn-close {
   display: block;
   padding: 0 30px;
   height: 50px;
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 50px;
   color: #fff;
   opacity: 0.8;
   text-transform: uppercase;
+}
+
+.main-sidebar-nav-item a > i {
+  line-height: 50px;
+  float: right;
 }
 
 .main-sidebar-nav-item a:hover {
@@ -2196,8 +2207,8 @@ a.main-sidebar-btn-close {
 }
 
 .main-sidebar-location a {
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   color: #fff;
   text-transform: uppercase;
   opacity: 0.8;
@@ -2205,6 +2216,10 @@ a.main-sidebar-btn-close {
 
 .main-sidebar-location a:hover {
   opacity: 1;
+}
+
+.main-sidebar-location a > i {
+  margin-right: 10px;
 }
 
 /*-------------------------------------------------------*/
@@ -3406,7 +3421,7 @@ address {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .tags a:hover {
@@ -4081,34 +4096,34 @@ address {
 
 .btn.btn-primary {
   color: #ffffff;
-  border-radius: 4px;	
+  border-radius: 5px;	
   background-color: /*#E94858*/ #E94858;
   border: 1px solid #E94858;
 }
 
 .btn.btn-secondary {
   color: #000000;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: #fafafa;
   border: 1px solid #fafafa;
 }
 
 .btn.btn-alternative {
   color: #FFF;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: #888d91;
   border: 1px solid #888d91;
 }
 
 .btn.btn-green {
   color: #FFF;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: #E94858;
 }
 
 .btn.btn-stroke {
   background-color: transparent;
-  border-radius: 4px;
+  border-radius: 5px;
   color: #000000;
   border: 1px solid #888d91;
 }
@@ -4564,7 +4579,7 @@ table th {
   text-transform: uppercase;
   padding: 3px 7px;
   letter-spacing: 0.05em;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .product-label .sale {
@@ -6265,7 +6280,7 @@ abbr.required {
 }
 
 .border-radius {
-	border-radius: 4px;
+	border-radius: 5px;
 }
 
 .border {

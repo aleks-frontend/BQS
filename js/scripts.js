@@ -167,7 +167,7 @@
     });
 
     $('.main-wrapper').animate({
-      marginLeft: -400
+      marginLeft: 0
     });
 
     $('body').prepend('<div class="sidebar-overlay"></div>');
@@ -200,6 +200,19 @@
 
   $('.sidebar-trigger').on('click', sidebarShow);
   $('.main-sidebar-btn-close').on('click', sidebarHide);
+	
+	
+	$(window).ready(function(){
+	$('.sidebar-trigger').click(function(){
+	$('body').width($('body').width());
+	$('body').css('overflow', 'hidden');
+	$('.sidebar-overlay').css('display', 'block');
+	});
+	$('.main-sidebar-btn-close').click(function(){
+	$('body, .sidebar-overlay').removeAttr('style');
+	});
+	});
+	
 
   /* Full-screen Hero Height
   -------------------------------------------------------*/
