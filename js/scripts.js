@@ -208,19 +208,34 @@
   /* Toggling the visibility of the inner dropdowns inside the sidebar
   -------------------------------------------------------*/
 
-  function innerDropdownToggler() {
+  function innerDropdownToggler(e) {
     $(this).siblings('.is-main-sidebar-inner-dropdown').slideToggle(300);
+    e.preventDefault();
   }
 
-  $('.js-inner-dropdown-trigger').on('click', innerDropdownToggler);
-	
-  $('.is-main-sidebar-inner-dropdown').find('li a').on('click', function(e) {
+  function notesDropdownToggler(e) {
+    $(this).siblings('.is-main-sidebar-notes-dropdown').slideToggle(300);
+    e.preventDefault();
+  }
+
+  function setLocationLabel(e) {
     var $this = $(this);
     var newTextVal = $(this).text();
     
     $this
       .closest('.is-main-sidebar-inner-dropdown').slideUp(300)
       .siblings('.js-inner-dropdown-trigger').find('span').text(newTextVal);
+
+    e.preventDefault();    
+  }
+
+  $('.js-inner-dropdown-trigger').on('click', innerDropdownToggler);
+  $('.js-notes-dropdown-trigger').on('click', notesDropdownToggler);  
+  $('.is-main-sidebar-inner-dropdown li a').on('click', setLocationLabel);
+
+  $('.js-hide-dropdown').on('click', function(e) {
+    $(this)
+      .closest('.is-main-sidebar-notes-dropdown').slideUp(300);
 
     e.preventDefault();
   });

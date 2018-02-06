@@ -2126,8 +2126,25 @@ aside.main-sidebar {
   right: -100%;
   width: 400px;
   padding: 100px 0 50px;
+  color: #fff;
   background: #171819;
+  text-transform: uppercase;
   z-index: 999;
+}
+
+aside.main-sidebar a {
+  color: #fff;
+  opacity: 0.8;
+}
+
+aside.main-sidebar button.btn.btn-lg {
+  font-size: 16px;
+  line-height: 1em;
+}
+
+aside.main-sidebar a:hover {
+  color: #E94858;
+  opacity: 1;
 }
 
 @media screen and (max-width: 480px) {
@@ -2168,6 +2185,10 @@ a.main-sidebar-cart-item-delete {
   transform: translateY(-50%);
 }
 
+.main-sidebar-separator {
+  margin: 50px 0 35px;
+}
+
 .main-sidebar-nav-item {
   display: block;
   border-bottom: 1px solid #28292b;
@@ -2177,8 +2198,8 @@ a.main-sidebar-cart-item-delete {
   border: none;
 }
 
-.main-sidebar-has-darker-bottom-border {
-  border-bottom-color: #171819;
+.main-sidebar-nav-shopping-cart-items .main-sidebar-nav-item:last-child {
+  border-bottom: 1px solid #28292b;  
 }
 
 .shopping-cart-item-main-info {
@@ -2230,8 +2251,72 @@ a.main-sidebar-btn-stick-top-right {
 
 .is-main-sidebar-inner-dropdown {
   display: none;
-  padding: 0 30px;
+  padding: 0 15px;
   background: #28292b;
+}
+
+.is-main-sidebar-inner-dropdown li.main-sidebar-nav-item {
+  border-bottom-color: #171819;
+}
+
+.is-main-sidebar-inner-dropdown li a.main-sidebar-nav-item-btn {
+  padding: 0 15px;
+}
+
+.is-main-sidebar-notes-dropdown {
+  display: none;
+  position: relative;
+  padding: 15px;
+  background: #28292b; 
+}
+
+.shopping-cart-item-notes-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 15px 15px 15px 50px;
+  border-bottom: 1px solid #171819;
+}
+
+.shopping-cart-item-notes-wrapper i.icon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #fff;
+  opacity: 0.8;
+}
+
+.shopping-cart-item-notes-wrapper textarea {
+  padding: 5px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  text-transform: uppercase;
+  resize: none;
+}
+
+.shopping-cart-item-notes-wrapper textarea:focus {
+  background: transparent;
+}
+
+.main-sidebar-inner-custom-button {
+  margin-left: 15px;
+  color: #fff;
+  border: none;
+  background: transparent;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.main-sidebar-inner-custom-button:hover {
+  color: #E94858;
+  opacity: 1;
+}
+
+.main-sidebar-notes-max-char {
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+  color: #fff;
 }
 
 .main-sidebar-nav-item-btn {
@@ -2242,7 +2327,6 @@ a.main-sidebar-btn-stick-top-right {
   font-weight: 400;
   line-height: 50px;
   color: #fff;
-  opacity: 0.8;
   text-transform: uppercase;
 }
 
