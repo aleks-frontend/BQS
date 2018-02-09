@@ -10,6 +10,9 @@
 
 <!-- Css -->
 <link rel="stylesheet" href="css/bootstrap.min.css" />
+<!-- .caleran includes -->
+<link rel="stylesheet" href="css/caleran.min.css" />
+<!-- .end caleran includes -->
 <link rel="stylesheet" href="css/magnific-popup.css" />
 <link rel="stylesheet" href="css/font-icons.css" />
 <link rel="stylesheet" href="css/sliders.css" />
@@ -22,7 +25,6 @@
 
 <script src="https://use.typekit.net/uss6jvx.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
 
 </head>
 
@@ -416,9 +418,9 @@
 			<div class="bg-white border-radius" style="padding: 15px 15px 15px 30px;border-radius: 4px;">	
               <form>
 				<i class="icon icon-search-glass pxio-xs" style="margin-bottom: 5px;"></i>
-                <input type="text" id="caleran-ex-6" class="" style="width: 30%;border: none;font-size: 22px;font-weight:300;" placeholder="Anywhere">
+                <input type="text" id="select-location" class="" style="width: 30%;border: none;font-size: 22px;font-weight:300;" placeholder="Mount Prospect, IL">
                 <i class="icon icon-calendar-secondary pxio-xs" style="margin-left: 10px; margin-bottom: 5px;"></i>
-                <input type="text" class="" style="width: 30%;border: none;font-size: 22px;font-weight:300;" placeholder="Anytime">
+                <input type="text" class="hero-select-date" style="width: 30%;border: none;font-size: 22px;font-weight:300;" placeholder="Anytime">
                 <input type="submit" class="right btn btn-lg btn-primary" style="border-radius: 4px;" value="Search">
               </form>
 				
@@ -900,11 +902,12 @@
 <!-- jQuery Scripts -->
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
 <script type="text/javascript" src="js/gmap3.js"></script>
-<script type="text/javascript" src="js/plugins.js"></script>  
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy4ZROOcKg7uNUVXdtBHM6IiYCPTCywq0&libraries=places"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/caleran.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-
 
 
 </body>
