@@ -2123,28 +2123,23 @@ aside.main-sidebar {
   overflow-y: scroll;
   top: 0;
   bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
   right: -100%;
   width: 400px;
   padding: 100px 0 50px;
-  color: #fff;
+  color: #e5e4e5;
   background: #171819;
-  text-transform: uppercase;
+  text-transform: none;
   z-index: 999;
 }
 
 aside.main-sidebar a {
-  color: #fff;
-  opacity: 0.8;
-}
-
-aside.main-sidebar button.btn.btn-lg {
-  font-size: 16px;
-  line-height: 1em;
+  color: #e5e4e5;
 }
 
 aside.main-sidebar a:hover {
-  color: #E94858;
-  opacity: 1;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 480px) {
@@ -2164,13 +2159,6 @@ aside.main-sidebar a:hover {
 a.main-sidebar-custom-btn {
   position: absolute;
   display: block;
-  color: #fff;  
-  opacity: 0.8;
-}
-
-a.main-sidebar-custom-btn:hover {
-  opacity: 1;
-  color: #E94858;
 }
 
 a.main-sidebar-btn-close {
@@ -2181,7 +2169,6 @@ a.main-sidebar-btn-close {
 a.main-sidebar-cart-item-delete {
   top: 50%;
   right: 30px;
-  font-size: 13px;
   transform: translateY(-50%);
 }
 
@@ -2195,7 +2182,6 @@ a.main-sidebar-cart-item-delete {
 }
 
 .main-sidebar-nav-item:last-child {
-  border: none;
 }
 
 .main-sidebar-nav-shopping-cart-items .main-sidebar-nav-item:last-child {
@@ -2220,11 +2206,14 @@ a.main-sidebar-cart-item-delete {
 .shopping-cart-item-main-info span {
   display: block;
   margin-top: 10px;
+}
+
+.shopping-cart-item-name {
   font-size: 16px;
-  font-weight: 400;
-  color: #fff;
-  opacity: 0.8;
-  text-transform: uppercase;
+}
+
+.shopping-cart-item-price {
+  font-size: 16px;
 }
 
 .shopping-cart-item-footer {
@@ -2274,23 +2263,19 @@ a.main-sidebar-btn-stick-top-right {
   position: relative;
   margin-bottom: 15px;
   padding: 15px 15px 15px 50px;
-  border-bottom: 1px solid #171819;
 }
 
 .shopping-cart-item-notes-wrapper i.icon {
   position: absolute;
   top: 15px;
   left: 15px;
-  color: #fff;
-  opacity: 0.8;
 }
 
 .shopping-cart-item-notes-wrapper textarea {
-  padding: 5px;
+  padding: 0 0;
   color: #fff;
   background: transparent;
   border: none;
-  text-transform: uppercase;
   resize: none;
 }
 
@@ -2300,34 +2285,19 @@ a.main-sidebar-btn-stick-top-right {
 
 .main-sidebar-inner-custom-button {
   margin-left: 15px;
-  color: #fff;
-  border: none;
-  background: transparent;
-  opacity: 0.8;
-  text-transform: uppercase;
-}
-
-.main-sidebar-inner-custom-button:hover {
-  color: #E94858;
-  opacity: 1;
 }
 
 .main-sidebar-notes-max-char {
   position: absolute;
   bottom: 15px;
   right: 30px;
-  color: #fff;
 }
 
 .main-sidebar-nav-item-btn {
   display: block;
   padding: 0 30px;
   height: 50px;
-  font-size: 16px;
-  font-weight: 400;
   line-height: 50px;
-  color: #fff;
-  text-transform: uppercase;
 }
 
 .is-not-full-width-btn {
@@ -2344,10 +2314,6 @@ a.main-sidebar-btn-stick-top-right {
   margin-right: 10px;
 }
 
-.main-sidebar-nav-item-btn:hover {
-  opacity: 1;
-}
-
 .main-sidebar-social-buttons {
   margin: 0 0 50px 25px;
   font-size: 0;
@@ -2362,10 +2328,12 @@ a.main-sidebar-btn-stick-top-right {
   margin: 0;
   padding: 0;
   width: 165px;
-  font-size: 14px;
-  color: #171819;
-  background: #e5e4e5;
-  border-color: #7e7e7f;
+}
+
+.main-sidebar-quick-checkout button.btn.btn-lg {
+  margin: 0;
+  padding: 0;
+  width: 300px;
 }
 
 .main-sidebar-location {
@@ -2373,11 +2341,7 @@ a.main-sidebar-btn-stick-top-right {
 }
 
 .main-sidebar-location a {
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
-  text-transform: uppercase;
-  opacity: 0.8;
+  color: #e5e4e5;
 }
 
 .main-sidebar-location a:hover {
@@ -4206,9 +4170,6 @@ address {
   backface-visibility: hidden;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin: auto 0px;
-  margin-right: 10px;
-  margin-bottom: 10px;
 }
 
 .btn:first-child {
@@ -4295,7 +4256,7 @@ address {
 }
 
 .btn-lg {
-  font-size: 14px;
+  font-size: 16px;
   padding: 0 35px;
 }
 
@@ -4306,19 +4267,29 @@ address {
 .btn-md {
   font-size: 14px;
   padding: 0 30px;
+  
 }
 
 .btn-md span {
-  line-height: 38px;
+  line-height: 36px;
 }
 
 .btn-sm {
-  font-size: 12px;
+  font-size: 13px;
   padding: 0 15px;
 }
 
 .btn-sm span {
-  line-height: 34px;
+  line-height: 32px;
+}
+
+.btn-xs {
+  font-size: 12px;
+  padding: 0 15px;
+}
+
+.btn-xs span {
+  line-height: 28px;
 }
 
 .rounded,
