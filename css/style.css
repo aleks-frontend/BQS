@@ -2744,8 +2744,7 @@ a.main-sidebar-btn-stick-top-right {
   margin-top: 15px;
   padding: 30px;
   margin-left: -56px;
-  width: 100% !important;
-  max-width: 945px;
+  box-sizing: border-box;
 }
 
 /*-------------------------------------------------------*/

@@ -288,6 +288,13 @@
 
   geoLocationAutocomplete();
   
+  /* Dynamically setting the width of the Geolocation dropdown
+  -------------------------------------------------------*/
+  $('#select-location').on('mouseup keyup', function() {
+    var parentWidth = $(this).closest('.col-sm-10').outerWidth() -30;
+    $('.pac-container').css('width', parentWidth);
+  });
+
   /* Datepicker initialize
   -------------------------------------------------------*/
   var today = new Date(),
