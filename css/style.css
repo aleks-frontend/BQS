@@ -493,6 +493,46 @@ video {
   padding: 0 10px;
 }
 
+
+/* Main Search
+-------------------------------------------------------*/
+
+.main-search-box-wrap {
+  position: absolute;
+  padding: 10px 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+	
+}
+
+.main-search-box {
+  float: left;
+  display: inline-block;
+  font-size: 20px;
+  width: 42.5%;
+  margin: 1% 0.5% 1% 0.5%;
+  padding: 5px 15px;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+	
+}
+
+.main-search-button {
+  position: absolute;
+  width: 10%;
+  margin: 1% 0px 1% 0.5%;
+  height: 60px;
+  padding: 5px 5px;
+  border: none;
+  background: #E94858;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+
 /* Row multiple items
 -------------------------------------------------------*/
 .items-grid .col-xs-6:nth-child(2n + 3) {
@@ -2552,11 +2592,9 @@ a.main-sidebar-btn-stick-top-right {
   overflow: hidden;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-position: top;
   background-size: cover;
+  background-image:url(../img/modal.jpg);
 }
 
 .hero-slide {
@@ -4369,13 +4407,7 @@ input[type="date"],
 input[type="search"],
 select,
 textarea {
-  height: 44px;
-  border: 1px solid #dedede;
-  background-color: transparent;
-  width: 100%;
-  font-size: 15px;
-  padding: 0 16px;
-  border-radius: 0;
+  height: 60px;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
@@ -4700,6 +4732,7 @@ table th {
 /*-------------------------------------------------------*/
 .product-item {
   margin-bottom: 30px;
+  padding-top: 15px;
 }
 
 .product-img img {
@@ -6461,6 +6494,11 @@ abbr.required {
 .border-side {
 	border-left: 1px solid #e5e4e5;
 	border-right: 1px solid #e5e4e5;
+}
+
+.bottom-offset {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 .ml-0 {
