@@ -503,8 +503,7 @@ video {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
-	
+  width: 100%;	
 }
 
 .main-search-box {
@@ -513,11 +512,21 @@ video {
   font-size: 20px;
   width: 42.5%;
   margin: 1% 0.5% 1% 0.5%;
-  padding: 5px 15px;
-  background: #fff;
+  padding: 5px 15px 5px 50px;
+  background-color: #fff;
+  background-position: left center;
+  background-repeat: no-repeat;
   border: none;
   border-radius: 5px;
-	
+}
+
+.main-search-box-location {
+  background-image: url(../img/location-icon.png);
+}
+
+.main-search-box-date-select {
+  padding-left: 60px;
+  background-image: url(../img/date-select-icon.png);
 }
 
 .main-search-button {
@@ -530,6 +539,109 @@ video {
   background: #E94858;
   color: #ffffff;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 640px) {
+
+  .main-search-box-wrap {
+    position: relative;
+    padding: 10px 15px;
+    top: auto;
+    left: auto;
+    transform: translate(0, 0);
+    width: 100%;  
+  }
+
+  .main-search-box {
+    display: block;
+    float: none;
+    width: 100%;
+    margin: 5px 0 5px;
+  }
+
+  .main-search-button {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: 60px;
+    padding: 5px 5px;
+    border: none;
+    background: #E94858;
+    color: #ffffff;
+    border-radius: 5px;
+  }
+
+}
+
+/* Overriding the Caleran Plugin styles
+-------------------------------------------------------*/
+
+.caleran-container.caleran-popup .caleran-input {
+  margin-top: 0;
+  width: 100% !important;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;  
+  border: none;
+  box-shadow: none;
+}
+
+.caleran-box-arrow-top {
+  display: none;
+}
+
+.caleran-container .caleran-input .caleran-header .caleran-header-start .caleran-header-start-day, 
+.caleran-container .caleran-input .caleran-header .caleran-header-start .caleran-header-end-day, 
+.caleran-container .caleran-input .caleran-header .caleran-header-end .caleran-header-start-day, 
+.caleran-container .caleran-input .caleran-header .caleran-header-end .caleran-header-end-day, 
+.caleran-container-mobile .caleran-input .caleran-header .caleran-header-start .caleran-header-start-day, 
+.caleran-container-mobile .caleran-input .caleran-header .caleran-header-start .caleran-header-end-day, 
+.caleran-container-mobile .caleran-input .caleran-header .caleran-header-end .caleran-header-start-day, 
+.caleran-container-mobile .caleran-input .caleran-header .caleran-header-end .caleran-header-end-day {
+  color: #e94858;
+}
+
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-title .caleran-month-switch:hover, 
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-title .caleran-year-switch:hover, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-title .caleran-month-switch:hover, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-title .caleran-year-switch:hover {
+  color: #e94858;
+}
+
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled.caleran-disabled-range, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled.caleran-disabled-range,
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-disabled {
+  color: #000;
+  opacity: 0.5;
+}
+
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day {
+  color: #000;
+}
+
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day.caleran-selected, 
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day.caleran-start, 
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day.caleran-end, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day.caleran-selected, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day.caleran-start, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day.caleran-end {
+  background: #e94858;
+}
+
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day.caleran-end:not(.caleran-hovered) span, 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day.caleran-end:not(.caleran-hovered) span {
+  color: #fff;
+  background: #e94858;
+}
+
+.caleran-container .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day:hover:not(.caleran-hovered):not(.caleran-selected), 
+.caleran-container-mobile .caleran-input .caleran-calendars .caleran-calendar .caleran-days-container .caleran-day:hover:not(.caleran-hovered):not(.caleran-selected) {
+  color: #fff;
+  background: #e94858;
+  opacity: 0.6;
 }
 
 
@@ -2779,10 +2891,40 @@ a.main-sidebar-btn-stick-top-right {
 /* Additional styling for the GeoLocation selector
 /*-------------------------------------------------------*/
 .pac-container {
-  margin-top: 15px;
-  padding: 30px;
-  margin-left: -56px;
+  margin-top: 5px;
+  padding: 30px 15px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   box-sizing: border-box;
+  box-shadow: none;
+}
+
+.pac-item {
+  font-size: 14px;
+  line-height: 50px;
+  color: #000;
+  border-top: none;
+  border-bottom: 1px solid #d8dbdb;
+  cursor: pointer;
+}
+
+.pac-item-query {
+  font-size: 14px;
+}
+
+.pac-icon {
+  margin-top: 0;
+  vertical-align: middle;
+}
+
+.pac-item:hover {
+  background-color: transparent;
+}
+
+.pac-logo:after {
+  margin-top: 30px;  
 }
 
 /*-------------------------------------------------------*/

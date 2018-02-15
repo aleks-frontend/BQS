@@ -187,6 +187,8 @@
       $(this).remove();
     });
 
+    $('body').removeAttr('style');
+
     e.preventDefault();    
   }
 
@@ -291,8 +293,13 @@
   /* Dynamically setting the width of the Geolocation dropdown
   -------------------------------------------------------*/
   $('#select-location').on('mouseup keyup', function() {
-    var parentWidth = $(this).closest('.col-sm-10').outerWidth() -30;
+    var parentWidth = $(this).outerWidth();
     $('.pac-container').css('width', parentWidth);
+  });
+
+  $('.main-search-box-date-select').on('mouseup keyup', function() {
+    var parentWidth = $(this).outerWidth();
+    $('.caleran-container.caleran-popup').css('width', parentWidth);
   });
 
   /* Datepicker initialize
@@ -304,7 +311,11 @@
 
   $('.hero-select-date').caleran({
     singleDate: true,
+    startEmpty: true,
+    showOn: "bottom",
+    autoAlign: false,
     autoCloseOnSelect: true,
+    calendarCount: 1,
     format: 'MMMM DD, YYYY',
     disabledRanges: [
       {
