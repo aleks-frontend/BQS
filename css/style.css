@@ -1319,12 +1319,6 @@ ol.numbers {
   background-color: #000000;
 }
 
-@media only screen and (max-width: 991px) {
-  header .flex-parent:not(.top-bar-links) {
-    display: block;
-  }
-}
-
 header .flex-child {
   flex: 1 0 0;
 }
@@ -2644,13 +2638,7 @@ a.main-sidebar-btn-stick-top-right {
     cursor: pointer;
     background-color: transparent;
   }
-  .navbar-right-nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding-right: 0;
-    color: #000000 !important;
-  }
+
   .navbar-right-nav > li {
     height: 85px;
   }
@@ -5221,7 +5209,7 @@ table th {
 /* Promo Banners / Collection
 /*-------------------------------------------------------*/
 .promo-banner a {
-  display: grid;
+  display: block;
   position: relative;
   overflow: hidden;
   max-height: 175px;
