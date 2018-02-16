@@ -20,9 +20,25 @@
 /*-------------------------------------------------------*/
 
 body {
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   color: #000000;
   background: #ffffff;
+}
+
+
+@font-face {
+  font-family: font-light;
+  src: url('../fonts/font-light.otf');
+}
+
+@font-face {
+  font-family: font-med;
+  src: url('../fonts/font-med.otf'), url('../fonts/font-med.otf');
+}
+
+@font-face {
+  font-family: font-bold;
+  src: url('../fonts/font-bold.otf'), url('../fonts/font-bold.otf');
 }
 
 .mark {
@@ -252,7 +268,7 @@ img.alignright {
 body {
   margin: 0;
   padding: 0;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.05em;
@@ -507,12 +523,13 @@ video {
 }
 
 .main-search-box {
+  font-family: "font-light",sans-serif;
   float: left;
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   width: 42.5%;
   margin: 1% 0.5% 1% 0.5%;
-  padding: 5px 15px 5px 50px;
+  padding: 5px 15px 5px 0px;
   background-color: #fff;
   background-position: left center;
   background-repeat: no-repeat;
@@ -521,12 +538,19 @@ video {
 }
 
 .main-search-box-location {
-  background-image: url(../img/location-icon.png);
+  background-image: url(../img/main-location-icon.png);
+  padding-left: 51px;
+  background-size: 21px 26px;
+  background-position: 15px 17px;
+  
+  
 }
 
 .main-search-box-date-select {
-  padding-left: 60px;
-  background-image: url(../img/date-select-icon.png);
+  background-image: url(../img/main-calendar-icon.png);
+  padding-left: 54px;
+  background-size: 24px 26px;
+  background-position: 15px 17px;
 }
 
 .main-search-button {
@@ -880,9 +904,9 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
   margin: 0;
   color: #000000;
   line-height: 36px;
@@ -921,7 +945,7 @@ h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   color: #000000;
   font-size: 85%;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .nocaps {
@@ -943,7 +967,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 .subheading {
-  font-weight: 300;
+  font-weight: normal;
   display: inline-block;
   color: #7f7f7f;
   font-size: 85%;
@@ -982,7 +1006,7 @@ p {
   font-size: 16px;
   color: #6e6e6e;
   font-weight: normal;
-  font-weight: 300;
+  font-weight: normal;
   line-height: 24px;
 }
 
@@ -1028,7 +1052,7 @@ p {
   margin-top: 20px;
   font-size: 16px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
   line-height: 24px;
 }
 
@@ -1037,7 +1061,7 @@ p {
   margin-top: 20px;
   font-size: 22px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: normal;
   line-height: 28px;
 }
 
@@ -1054,7 +1078,7 @@ blockquote {
 blockquote > p {
   font-size: 16px;
   line-height: 24px;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   margin-bottom: 10px !important;
   color: #7f7f7f;
   position: relative;
@@ -1080,7 +1104,7 @@ blockquote > span {
 }
 
 .dropcap {
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
 }
 
 .dropcap.style-1 {
@@ -1164,7 +1188,7 @@ ol.numbers {
 
 .widget-title {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: normal;
   margin-bottom: 30px;
 }
 
@@ -1365,13 +1389,14 @@ header .flex-child.flex-right {
 }
 
 .navbar-nav > li > a {
-  font-family: "omnes-pro",sans-serif;
-  font-weight: 400;
+  font-family: "font-med",sans-serif;
+  font-weight: normal;
   letter-spacing: 0.05em;
-  color: #000000;
-  font-size: 16px;
+  color: #333333;
+  font-size: 15px;
   padding: 0 10px;
   line-height: 100px;
+  text-transform: uppercase;
 }
 
 .navbar-nav > li > a:hover {
@@ -1453,9 +1478,9 @@ header .flex-child.flex-right {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .dropdown-menu.megamenu, .dropdown-menu.megamenu-wide {
@@ -1516,9 +1541,9 @@ header .flex-child.flex-right {
   display: block;
   margin-bottom: 15px;
   color: #fff;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   font-size: 13px;
-  font-weight: 300;
+  font-weight: normal;
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1603,16 +1628,19 @@ header .flex-child.flex-right {
 }
 
 .navbar-right-nav li {
+  font-family: "font-med",sans-serif;
   display: table-cell;
   vertical-align: middle;
-  font-size: 16px; 
-  font-weight: 400;
+  font-size: 15px; 
+  font-weight: normal;
   padding-left: 25px;
+  text-transform: uppercase;
+  
   height: 85px;
 }
 
-.navbar-right-nav li:last-child {
-  padding-right: 0;
+.navbar-right-nav li:first-child {
+  padding-left: 0;
 }
 
 .navbar-right-nav.menu-socials a {
@@ -1624,7 +1652,7 @@ header .flex-child.flex-right {
   color: #E94858;
 }
 
-.nav-wrap ~ .navbar-right-nav {
+.navbar-right-nav {
   padding: 0 15px;
 }
 
@@ -1678,7 +1706,7 @@ header .flex-child.flex-right {
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #e5e4e5;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   font-size: 32px;
   margin-bottom: 0;
   color: #000000;
@@ -1714,24 +1742,24 @@ header .flex-child.flex-right {
 
 input.main-zip-code-input::-webkit-input-placeholder {
   color: #000000;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 input.main-zip-code-input:-moz-placeholder {
   color: #000000;
-  font-weight: 300;
+  font-weight: normal;
   opacity: 1;
 }
 
 input.main-zip-code-input::-moz-placeholder {
   color: #000000;
-  font-weight: 300;
+  font-weight: normal;
   opacity: 1;
 }
 
 input.main-zip-code-input:-ms-input-placeholder {
   color: #000000;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .search-close {
@@ -1894,7 +1922,7 @@ input.main-zip-code-input:-ms-input-placeholder {
 
 .nav-cart-summary {
   margin-top: 10px;
-  font-weight: 300;
+  font-weight: normal;
   color: #000000;
   font-size: 14px;
 }
@@ -1922,9 +1950,9 @@ input.main-zip-code-input:-ms-input-placeholder {
 /* Navigation Register
 -------------------------------------------------------*/
 .nav-register a {
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: normal;
   letter-spacing: 0.05em;
   font-size: 15px;
   display: inline-block;
@@ -2276,7 +2304,7 @@ aside.main-sidebar {
   top: 0;
   bottom: 0;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: normal;
   right: -100%;
   width: 400px;
   padding: 100px 0 50px;
@@ -2585,7 +2613,7 @@ a.main-sidebar-btn-stick-top-right {
     padding: 15px 0 15px 20px;
     border-bottom: 1px solid #e5e4e5;
     clear: both;
-    font-weight: 300;
+    font-weight: normal;
     line-height: 15px;
     color: #7f7f7f;
     white-space: nowrap;
@@ -2628,7 +2656,7 @@ a.main-sidebar-btn-stick-top-right {
   }
 	
 	.navbar-right-nav > li > a {
-	 font-weight: 400;
+	 font-weight: normal;
 	}
 	
   .content-wrap {
@@ -2781,7 +2809,7 @@ a.main-sidebar-btn-stick-top-right {
 .hero-message h1 {
   color: #fff;
   font-size: 80px;
-  font-weight: 700;
+  font-weight: normal;
   line-height: 1;
 }
 
@@ -2800,7 +2828,7 @@ a.main-sidebar-btn-stick-top-right {
 .hero-subtitle {
   font-family: "Quicksand", sans-serif;
   text-transform: none;
-  font-weight: 600;
+  font-weight: normal;
   color: #fff;
   line-height: 1.6;
   letter-spacing: normal;
@@ -2983,7 +3011,7 @@ a.main-sidebar-btn-stick-top-right {
   line-height: 34px;
   margin-top: 20px;
   margin-bottom: 14px;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .testimonials .testimonial span {
@@ -3232,7 +3260,7 @@ address {
 .gmap-btn {
   background-color: #f7f8f9;
   color: #000000;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   width: 100%;
   height: 70px;
   line-height: 70px;
@@ -3385,8 +3413,8 @@ address {
 /* About Us Page
 /*-------------------------------------------------------*/
 .result {
-  font-family: "omnes-pro",sans-serif;
-  font-weight: 300;
+  font-family: "font-light",sans-serif;
+  font-weight: normal;
   font-size: 24px;
   margin-bottom: 8px;
   color: #000000;
@@ -3405,9 +3433,9 @@ address {
 /* 404
 /*-------------------------------------------------------*/
 .page-404 h2 {
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   color: #7f7f7f;
-  font-weight: 300;
+  font-weight: normal;
   font-size: 24px;
 }
 
@@ -3515,7 +3543,7 @@ address {
 .read-more {
   text-transform: uppercase;
   font-size: 13px;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .post-content {
@@ -3608,7 +3636,7 @@ address {
 .sidebar .widget-title {
   margin-bottom: 30px;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 .sidebar .widget {
@@ -3682,7 +3710,7 @@ address {
   margin-bottom: 0;
   font-weight: normal;
   line-height: 24px;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   text-transform: none;
   letter-spacing: normal;
   color: #7f7f7f;
@@ -3731,7 +3759,7 @@ address {
   margin: 0 6px 6px 0;
   font-size: 11px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: normal;
   color: #333;
   background-color: #f7f8f9;
   display: inline-block;
@@ -4238,9 +4266,9 @@ address {
   text-decoration: none;
   padding: 14px 20px;
   color: #7f7f7f;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   -webkit-transition: all 0.3s ease-in-out;
@@ -4311,10 +4339,10 @@ address {
   margin-right: -1px;
   border: 1px solid #e5e4e5;
   border-radius: 0;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   color: #7f7f7f;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -4342,8 +4370,8 @@ address {
 }
 
 .btn {
-  font-family: "omnes-pro",sans-serif;
-  font-weight: 400;
+  font-family: "font-med",sans-serif;
+  font-weight: normal;
   text-decoration: none;
   text-align: center;
   overflow: hidden;
@@ -4446,7 +4474,7 @@ address {
 }
 
 .btn-lg {
-  font-size: 16px;
+  font-size: 13px;
   padding: 0 35px;
 }
 
@@ -4455,7 +4483,7 @@ address {
 }
 
 .btn-md {
-  font-size: 14px;
+  font-size: 13px;
   padding: 0 30px;
   
 }
@@ -4465,7 +4493,7 @@ address {
 }
 
 .btn-sm {
-  font-size: 13px;
+  font-size: 12px;
   padding: 0 15px;
 }
 
@@ -4474,7 +4502,7 @@ address {
 }
 
 .btn-xs {
-  font-size: 12px;
+  font-size: 11px;
   padding: 0 15px;
 }
 
@@ -4672,7 +4700,7 @@ input[type="radio"] + label {
   letter-spacing: normal;
   color: #000000;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 .radio-buttons > li,
@@ -4713,7 +4741,7 @@ label {
   color: #000000;
   font-size: 15px;
   vertical-align: middle;
-  font-weight: 300;
+  font-weight: normal;
   margin-bottom: 7px;
 }
 
@@ -4922,7 +4950,7 @@ table th {
   font-weight: bold;
   cursor: default;
   font-size: 11px;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   letter-spacing: 0.05em;
 }
 
@@ -4946,7 +4974,7 @@ table th {
   width: 35%;
   text-decoration: none;
   color: #000000;
-  font-weight: 500;
+  font-weight: normal;
   font-size: 15px;
 }
 
@@ -4971,8 +4999,8 @@ table th {
 
 .hover-overlay .product-details > h3 {
   font-size: 18px;
-  font-family: "omnes-pro",sans-serif;
-  font-weight: 300;
+  font-family: "font-light",sans-serif;
+  font-weight: normal;
   margin-top: 10px;
 }
 
@@ -4992,14 +5020,15 @@ table th {
 	line-height: 13px;
 	margin-bottom: 5px;
 	font-size: 13px;
-	font-family: "omnes-pro",sans-serif;
+	font-family: "font-light",sans-serif;
 	text-transform: none;
 	letter-spacing: normal;
-	font-weight: 500;
+	font-weight: normal;
 }
 
 .product-title a,
 .product-list-widget a {
+  font-family: "font-med",sans-serif;
   line-height: 1.5;
   color: #000000;
 }
@@ -5009,18 +5038,18 @@ table th {
   color: #E94858;
 }
 
-.category {
+.vendor-name {
   width: 100%;
   float: left; 
   display: block;
 }
 
-.category a {
+.vendor-name a {
   font-size: 13px;
   color: #7f7f7f;
 }
 
-.category a:hover {
+.vendor-name a:hover {
   color: #E94858;
 }
 
@@ -5045,6 +5074,7 @@ table th {
 }
 
 .product-img .product-quickview {
+  font-family: "font-med",sans-serif;
   position: absolute;
   bottom: -50px;
   width: 100%;
@@ -5138,7 +5168,7 @@ table th {
   color: #fff;
   font-size: 12px;
   margin-left: 7px;
-  font-weight: 500;
+  font-weight: normal;
   text-transform: uppercase;
 }
 
@@ -5160,7 +5190,7 @@ table th {
   color: #E94858;
   font-size: 12px;
   margin-left: 7px;
-  font-weight: 500;
+  font-weight: normal;
   text-transform: uppercase;
 }
 
@@ -5183,7 +5213,7 @@ table th {
   color: #E94858;
   font-size: 28px;
   margin-left: 7px;
-  font-weight: 500;
+  font-weight: normal;
   text-transform: uppercase;
 }
 
@@ -5226,13 +5256,13 @@ table th {
 .promo-inner h2 {
   color: #fff;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .promo-inner h4 {
   color: #000000;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 @media only screen and (max-width: 991px) {
@@ -5327,7 +5357,7 @@ table th {
   background-color: transparent;
   color: #7f7f7f;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .product-tabs .nav.nav-tabs > li > a:hover {
@@ -5376,7 +5406,7 @@ table th {
 
 .promo-bg p {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: normal;
   margin-bottom: 30px;
 }
 
@@ -5528,7 +5558,7 @@ h2.heading-frame {
   line-height: 14px;
   margin-bottom: 15px;
   font-size: 20px;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
 }
 
 .product-list .product-details,
@@ -5674,7 +5704,7 @@ h2.heading-frame {
 
 .filter-by-price label {
   font-weight: normal;
-  font-family: "omnes-pro",sans-serif;
+  font-family: "font-light",sans-serif;
   line-height: 33px;
   margin-bottom: 0;
   font-size: 14px;
@@ -5877,7 +5907,7 @@ hr.border-white {
   width: 70px;
   color: #000000;
   font-size: 13px;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .swatch-violet {
@@ -6359,14 +6389,14 @@ abbr.required {
 /* Footer Type-1
 /*-------------------------------------------------------*/
 .footer-widgets {
-  padding: 75px 0;
+  padding: 50px 0;
 }
 
 .footer-widgets .widget-title {
-  margin-bottom: 26px;
-  font-size: 18px;
+  margin-bottom: 20px;
+  font-size: 16px;
   position: relative;
-  font-weight: 400;
+  font-weight: normal;
   text-transform: none;
   letter-spacing: normal;
   color: #e5e4e5;
@@ -8007,7 +8037,6 @@ abbr.required {
 }
 .product a:hover img {
   transform: translate3d(0, -5px, 0);
-  -webkit-transform: translate3d(0, -5px, 0);
 }
 .product .label + img {
   margin-top: 2.78571429em;
