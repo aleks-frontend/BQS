@@ -23,6 +23,9 @@
 <link href="css/line-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
 <link rel="stylesheet" href="css/pixeion.css" />
 
+<script src="https://use.typekit.net/uss6jvx.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 </head>
 
 <body class="relative">
@@ -50,7 +53,7 @@
 		  <div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 			  <li>
-				<a href="shop.html">Flowers &amp; Plants</a>
+				<a href="#">Flowers &amp; Plants</a>
 			  </li>
 			  <li>
 				<a href="#">Event Planning</a>
@@ -67,7 +70,7 @@
 			<li>
 			  <a href="#" class="hidden-xs hidden-sm">Sign Up</a>
 			</li>
-			<li class="hidden-xs hidden-sm">
+			<li>
 			  <a href="#" class="txt_color_black">
 				<i class="icon icon-user pxio-xs"></i>
 			  </a>
@@ -365,15 +368,14 @@
 		
 </header>
 
-
-<div class="content-wrapper oh bg-light">
+<div class="content-wrapper oh bg-white" style="">
 
 <!-- Single Product -->
 <section class="section-wrap single-product">
 <div class="container">
 <div class="row">
 
-<div class="col-md-6 col-xs-12 product-slider">
+<div class="col-sm-6 col-xs-12 product-slider">
 
 <div class="flickity flickity-slider-wrap mfp-hover" id="gallery-main">
 
@@ -429,8 +431,8 @@
 </div> <!-- end col img slider -->
 
 
-<div class="col-md-6 col-xs-12 product-description-wrap bg-white">
-	<div class="prod-desc-box">
+<div class="col-sm-6 col-xs-12 product-description-wrap mb-30">
+	<div class="prod-desc-box bg-white">
 		<div class="prod-desc-box_heading">
 			Lorem Ipsum Dolor
 		</div>
@@ -442,8 +444,8 @@
 			</div><!-- end prod-desc-box_two-col-grid-item -->
 			<div class="prod-desc-box_two-col-grid-item text-right">
 				<div class="prod-desc-box_breadcrumbs">
-					<a href="#">Shop</a> / BQ-
-					<span class="prod-desc-box_breadcrumbs-florist-id">A52P5</span>-
+					<a href="#">Shop</a> / BQ -
+					<span class="prod-desc-box_breadcrumbs-florist-id">A52P5</span> -
 					<span class="prod-desc-box_breadcrumbs-product-number">3A56AF</span>
 				</div><!-- end prod-desc-box_breadcrumbs -->
 			</div><!-- end prod-desc-box_two-col-grid-item -->
@@ -451,10 +453,10 @@
 		<span class="prod-desc-box_total-price">$149.99</span>
 		<div class="prod-desc-box_two-col-grid">
 			<div class="prod-desc-box_two-col-grid-item">
-				<a href="#" class="btn btn-primary btn-lg btn-full-width btn-gray"><i class="icon icon-delivery-truck-alt"></i><span>Hand Deliver</span></a>
+				<a href="#" class="btn btn-selection btn-full-width btn-gray"><i class="icon icon-delivery-truck-alt pxio-xs"></i><span>Hand Deliver</span></a>
 			</div><!-- end prod-desc-box_two-col-grid-item -->
 			<div class="prod-desc-box_two-col-grid-item">
-				<a href="#" class="btn btn-primary btn-lg btn-full-width btn-gray"><i class="icon icon-storefront"></i><span>Pickup in Store</span></a>
+				<a href="#" class="btn btn-selection btn-full-width btn-gray"><i class="icon icon-storefront pxio-xs"></i><span>Pickup in Store</span></a>
 			</div><!-- end prod-desc-box_two-col-grid-item -->
 		</div><!-- end prod-desc-box_two-col-grid -->
 		<div class="prod-desc-box_bundle">
@@ -462,29 +464,29 @@
 				FLOWERS &amp; VASE BUNDLE
 			</div><!-- end prod-desc-box_bundle-headline -->
 			<div class="prod-desc-box_bundle-body">
-				<img src="img/shop_item_20.jpg" alt="Product" />
-				<span>The Bloom Bottle</span>
-				<span>$12.99</span>
+				<img src="img/shop/shop_item_20.jpg" alt="Product" class="border-radius" />
+				<span class="bundle-title">The Bloom Bottle</span>
+				<span class="bundle-price">$12.99</span>
 				<a href="#" class="prod-desc-box_bundle-close-btn"><i class="icon icon-close-x pxio-xs"></i></a>
 			</div><!-- end prod-desc-box_bundle-body -->
 		</div><!-- end prod-desc-box_bundle -->
 		<div class="prod-desc-box_three-col-grid">
 			<div class="prod-desc-box_three-col-grid-item">
-				<a href="#" class="btn btn-full-width btn-primary btn-gray btn-delivery-date-picker js-delivery-date-toggle">
-					<span>Today</span>
-					<span class="js-date-picker-today">February 21</span>
+				<a href="#" class="btn btn-full-width btn-gray btn-delivery-date-picker js-delivery-date-toggle">
+					<span class="picker-day">Today</span>
+					<span class="js-date-picker-today picker-date">February 21</span>
 				</a>
 			</div><!-- end prod-desc-box_three-col-grid-item -->
 			<div class="prod-desc-box_three-col-grid-item">
-				<a href="#" class="btn btn-full-width btn-primary btn-gray btn-delivery-date-picker js-delivery-date-toggle">
-					<span>Tomorrow</span>
-					<span class="js-date-picker-tomorrow">February 22</span>
+				<a href="#" class="btn btn-full-width btn-gray btn-delivery-date-picker js-delivery-date-toggle">
+					<span class="picker-day">Tomorrow</span>
+					<span class="js-date-picker-tomorrow picker-date">February 22</span>
 				</a>
 			</div><!-- end prod-desc-box_three-col-grid-item -->
 			<div class="prod-desc-box_three-col-grid-item">
-				<a href="#" class="btn btn-full-width btn-primary btn-gray btn-delivery-date-picker js-delivery-date-datepicker">
-					<span>Other Date</span>
-					<span class="js-date-picker-other">February 23</span>
+				<a href="#" class="btn btn-full-width btn-gray btn-delivery-date-picker js-delivery-date-datepicker">
+					<span class="picker-day">Other Date</span>
+					<span class="js-date-picker-other picker-date">February 23</span>
 				</a>
 			</div><!-- end prod-desc-box_three-col-grid-item -->
 		</div><!-- end prod-desc-box_three-col-grid -->
@@ -498,9 +500,7 @@
 </div> <!-- end container -->
 </section> <!-- end single product -->
 
-
-
-<section class="section-wrap" style="background: #FFF;padding-left: 0px;">
+<section class="section-wrap bg-white" style="padding-left: 0px;">
 <div class="container">
 
 <div class="col-md-6 col-sm-12 mb-30" style="padding-left: 0px;">
@@ -515,13 +515,13 @@ Designed &amp; Handcrafted
 
 <div class="col-md-12" style="padding-left: 0px;">
 <div class="row">
-<div class="col-md-5">
+<div class="col-md-5 col-xs-4" style="float: left;">
 
-<img src="img/profile_avatar.jpg" class="border-radius">
+<img src="img/profile_avatar.jpg" class="border-radius" style="max-height: 150px;">
 
 </div>
 
-<div class="col-md-7">
+<div class="col-md-7 col-xs-8">
 
 <h6>The Greenwich Florist, Inc</h6>
 <span style="font-size: 14px;">Northbrook, IL 60062</span>
@@ -573,7 +573,7 @@ Designed &amp; Handcrafted
 </div>
 
 
-<div class="col-md-6 col-sm-12 mb-30">
+<div class="col-md-6 col-sm-12 mb-30 bg-white">
 <div class="row heading-row">
 <div class="col-md-12">
 <h6 class="heading uppercase relative bottom-line full-grey">
@@ -666,134 +666,97 @@ Ratings &amp; Reviews
 
 </div>
 </section>
-
+	
 <hr>
 
-<section class="section-wrap bg-white pb-0">
+<section class="section-wrap">
 	<div class="container">
-
-		<div class="row">
-
-			<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
 		
-
-				<h4>Shop Related Bouquets</h4>
-				
-				
-			</div>
-
-		</div>
-
+	<div class="row">
+	  <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center mb-50">
+		<h4>Shop Related</h4>
+	  </div>
 	</div>
-</section>
-
-<section class="section-wrap bg-white">
-	<div class="container">
 	
-		<div class="row items-grid">
-	
-		
-			<div class="catalogue-col shop-catalogue grid-view">
-			
-				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 product product-grid">
-					<div class="product-item clearfix">
-						<div class="product-img hover-trigger">
-							<a href="shop-single.html">
-								<img src="img/shop/shop_item_16.jpg" alt="">
-							</a>
-							<div class="hover-2">                       
-							</div>
-							<a href="#" class="product-quickview">View Bouquets</a>
-						</div>
-
-						<div class="product-details">
-							<h3 class="product-title"><a href="shop-single.html">Snow White Bowl</a></h3>
-							<span class="category">
-								<a href="catalogue-grid.html">The Greenwich Florist, Inc</a>
-							</span>
-						</div>
-
-						<span class="price">
-							<ins><span class="amount">$159.99</span></ins>                        
-						</span>                     
-					</div>
-				</div> <!-- end product -->
-				
-				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 product product-grid">
-					<div class="product-item clearfix">
-						<div class="product-img hover-trigger">
-							<a href="shop-single.html">
-								<img src="img/shop/shop_item_1.jpg" alt="">
-							</a>
-							<div class="hover-2">                       
-							</div>
-							<a href="#" class="product-quickview">View Bouquets</a>
-						</div>
-
-						<div class="product-details">
-							<h3 class="product-title"><a href="shop-single.html">Snow White Bowl</a></h3>
-							<span class="category">
-								<a href="catalogue-grid.html">The Greenwich Florist, Inc</a>
-							</span>
-						</div>
-
-						<span class="price">
-							<ins><span class="amount">$159.99</span></ins>                        
-						</span>                     
-					</div>
-				</div> <!-- end product -->
-				
-				<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 product product-grid">
-					<div class="product-item clearfix">
-						<div class="product-img hover-trigger">
-							<a href="shop-single.html">
-								<img src="img/shop/shop_item_2.jpg" alt="">
-							</a>
-							<div class="hover-2">                       
-							</div>
-							<a href="#" class="product-quickview">View Bouquets</a>
-						</div>
-
-						<div class="product-details">
-							<h3 class="product-title"><a href="shop-single.html">Snow White Bowl</a></h3>
-							<span class="category">
-								<a href="catalogue-grid.html">The Greenwich Florist, Inc</a>
-							</span>
-						</div>
-
-						<span class="price">
-							<ins><span class="amount">$159.99</span></ins>                        
-						</span>                     
-					</div>
-				</div> <!-- end product -->
-				
-				<div class="col-lg-3 col-md-3 col-sm-4 hidden-sm col-xs-6 product product-grid">
-					<div class="product-item clearfix">
-						<div class="product-img hover-trigger">
-							<a href="shop-single.html">
-								<img src="img/shop/shop_item_15.jpg" alt="">
-							</a>
-							<div class="hover-2">                       
-							</div>
-							<a href="#" class="product-quickview">View Bouquets</a>
-						</div>
-
-						<div class="product-details">
-							<h3 class="product-title"><a href="shop-single.html">Snow White Bowl</a></h3>
-							<span class="category">
-								<a href="catalogue-grid.html">The Greenwich Florist, Inc</a>
-							</span>
-						</div>
-
-						<span class="price">
-							<ins><span class="amount">$159.99</span></ins>                        
-						</span>                     
-					</div>
-				</div> <!-- end product -->
-				
+	<div class="row items-grid">
+	  <div class="catalogue-col shop-catalogue grid-view">
+		<div class="col-lg-3 col-md-3 col-sm-4 product product-grid">
+		  <div class="product-item clearfix">
+			<div class="product-img">
+			  <a href="#">
+				<img src="img/shop/shop_item_16.jpg" alt="">
+			  </a>
 			</div>
-
-		</div>
+			<div class="product-details">
+			  <h3 class="product-title"><a href="#">Snow White Bowl</a></h3>
+			  <span class="price">
+				<ins><span class="amount">$109.99</span></ins>
+			  </span>
+			</div>
+			<span class="vendor-name">
+			  <a href="catalogue-grid.html">The Greenwich Floral</a>                        
+			</span>                     
+		  </div>
+		</div> <!-- end product -->
+		  
+		<div class="col-lg-3 col-md-3 col-sm-4 product product-grid">
+		  <div class="product-item clearfix">
+			<div class="product-img">
+			  <a href="#">
+				<img src="img/shop/shop_item_20.jpg" alt="">
+			  </a>
+			</div>
+			<div class="product-details">
+			  <h3 class="product-title"><a href="#">Snow White Bowl</a></h3>
+			  <span class="price">
+				<ins><span class="amount">$109.99</span></ins>
+			  </span>
+			</div>
+			<span class="vendor-name">
+			  <a href="catalogue-grid.html">The Greenwich Floral</a>                        
+			</span>                     
+		  </div>
+		</div> <!-- end product -->
+		  
+		<div class="col-lg-3 col-md-3 col-sm-4 product product-grid">
+		  <div class="product-item clearfix">
+			<div class="product-img">
+			  <a href="#">
+				<img src="img/shop/shop_item_12.jpg" alt="">
+			  </a>
+			</div>
+			<div class="product-details">
+			  <h3 class="product-title"><a href="#">Snow White Bowl</a></h3>
+			  <span class="price">
+				<ins><span class="amount">$109.99</span></ins>
+			  </span>
+			</div>
+			<span class="vendor-name">
+			  <a href="catalogue-grid.html">The Greenwich Floral</a>                        
+			</span>                     
+		  </div>
+		</div> <!-- end product -->
+		  
+		<div class="col-lg-3 col-md-3 col-sm-4 product product-grid hidden-sm">
+		  <div class="product-item clearfix">
+			<div class="product-img">
+			  <a href="#">
+				<img src="img/shop/shop_item_13.jpg" alt="">
+			  </a>
+			</div>
+			<div class="product-details">
+			  <h3 class="product-title"><a href="#">Snow White Bowl</a></h3>
+			  <span class="price">
+				<ins><span class="amount">$109.99</span></ins>
+			  </span>
+			</div>
+			<span class="vendor-name">
+			  <a href="catalogue-grid.html">The Greenwich Floral</a>                        
+			</span>                     
+		  </div>
+		</div> <!-- end product -->
+	  </div>
+	</div>
 	
 	</div>
 </section>           
