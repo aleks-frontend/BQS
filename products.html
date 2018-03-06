@@ -21,6 +21,8 @@
 <link href="https://file.myfontastic.com/in74WB7YUvPZqaXb9CtMWg/icons.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 <link href="css/line-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- BxSlider Stylesheet -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 <link rel="stylesheet" href="css/pixeion.css" />
 
 <script src="https://use.typekit.net/uss6jvx.js"></script>
@@ -29,6 +31,68 @@
 </head>
 
 <body class="relative">
+
+	<div class="bundle-slider__overlay">
+		<div class="bundle-slider__wrapper">
+			<button class="bundle-slider__close-btn"><i class="icon icon-close-x pxio-xs"></i></button>
+			<ul class="bundle-slider">
+				<li class="bundle-slider__item">
+					<img src="img/bundle-slider/adra-vase.jpg" alt="Adra Vase" class="bundle-slider__item-photo" />
+					<div class="bundle-slider__item-content">
+						<div class="bundle-slider__item-heading">
+							Adra Vase test
+						</div><!-- end bundle-slider__item-heading -->
+						<div class="bundle-slider__item-price">
+							10
+						</div><!-- end bundle-slider__item-price -->
+						<div class="bundle-slider__item-description">
+							<p>
+								Bright white glaze brings deeply etched 
+	chevron pattern into crisp focus.
+							</p>
+						</div><!-- end bundle-slider__item-description -->
+						<button class="bundle-slider__add-button">Add To Bundle</button>
+					</div><!-- end bundle-slider__item-content -->
+				</li><!-- end bundle-slider__item -->
+				<li class="bundle-slider__item">
+					<img src="img/bundle-slider/allegra-tall-vase.jpg" alt="Alegra Tall Vase" class="bundle-slider__item-photo" />
+					<div class="bundle-slider__item-content">
+						<div class="bundle-slider__item-heading">
+							Allegra Tall Vase
+						</div><!-- end bundle-slider__item-heading -->
+						<div class="bundle-slider__item-price">
+							14.99
+						</div><!-- end bundle-slider__item-price -->
+						<div class="bundle-slider__item-description">
+							<p>
+								Bright white glaze brings deeply etched 
+	chevron pattern into crisp focus.
+							</p>
+						</div><!-- end bundle-slider__item-description -->
+						<button class="bundle-slider__add-button">Add To Bundle</button>
+					</div><!-- end bundle-slider__item-content -->
+				</li><!-- end bundle-slider__item -->
+				<li class="bundle-slider__item">
+					<img src="img/bundle-slider/evelyn-large-vase.jpg" alt="Evelyn Large Vase" class="bundle-slider__item-photo" />
+					<div class="bundle-slider__item-content">
+						<div class="bundle-slider__item-heading">
+							Evelyn Large Vase
+						</div><!-- end bundle-slider__item-heading -->
+						<div class="bundle-slider__item-price">
+							14.99
+						</div><!-- end bundle-slider__item-price -->
+						<div class="bundle-slider__item-description">
+							<p>
+								Bright white glaze brings deeply etched 
+	chevron pattern into crisp focus.
+							</p>
+						</div><!-- end bundle-slider__item-description -->
+						<button class="bundle-slider__add-button">Add To Bundle</button>
+					</div><!-- end bundle-slider__item-content -->
+				</li><!-- end bundle-slider__item -->
+			</ul><!-- end bundle-slider -->
+		</div><!-- end bundle-slider__wrapper -->
+	</div><!-- end bundle-slider__overlay -->
 
 <main class="main-wrapper">
 
@@ -450,7 +514,7 @@
 				</div><!-- end prod-desc-box_breadcrumbs -->
 			</div><!-- end prod-desc-box_two-col-grid-item -->
 		</div><!-- end prod-desc-box_two-col-grid -->
-		<span class="prod-desc-box_total-price">$149.99</span>
+		<span class="prod-desc-box_total-price">149.99</span>
 		<div class="prod-desc-box_two-col-grid">
 			<div class="prod-desc-box_two-col-grid-item">
 				<a href="#" class="btn btn-selection btn-full-width btn-gray"><i class="icon icon-delivery-truck-alt pxio-xs"></i><span>Hand Deliver</span></a>
@@ -464,10 +528,15 @@
 				FLOWERS &amp; VASE BUNDLE
 			</div><!-- end prod-desc-box_bundle-headline -->
 			<div class="prod-desc-box_bundle-body">
-				<img src="img/shop/shop_item_20.jpg" alt="Product" class="border-radius" />
-				<span class="bundle-title">The Bloom Bottle</span>
-				<span class="bundle-price">$12.99</span>
-				<a href="#" class="prod-desc-box_bundle-close-btn"><i class="icon icon-close-x pxio-xs"></i></a>
+				<div class="prod-desc-box_item-desc">
+					<img src="img/shop/shop_item_20.jpg" alt="Product" class="border-radius prod-desc-box_bundle-photo" />
+					<span class="prod-desc-box_bundle-title">The Bloom Bottle</span>
+					<span class="prod-desc-box_bundle-price">12.99</span>
+					<a href="#" class="prod-desc-box_bundle-close-btn"><i class="icon icon-close-x pxio-xs"></i></a>
+				</div><!-- end prod-desc-box_item-desc -->
+				<div class="prod-desc-box_new-button js-bundle-slider-trigger">
+					Buy Vase
+				</div><!-- end prod-desc-box_new-button -->
 			</div><!-- end prod-desc-box_bundle-body -->
 		</div><!-- end prod-desc-box_bundle -->
 		<div class="prod-desc-box_three-col-grid">
@@ -484,7 +553,7 @@
 				</a>
 			</div><!-- end prod-desc-box_three-col-grid-item -->
 			<div class="prod-desc-box_three-col-grid-item">
-				<a href="#" class="btn btn-full-width btn-gray btn-delivery-date-picker js-delivery-date-datepicker">
+				<a href="#" class="btn btn-full-width btn-gray btn-delivery-date-picker js-delivery-date-datepicker js-delivery-date-toggle">
 					<span class="picker-day">Other Date</span>
 					<span class="js-date-picker-other picker-date">February 23</span>
 				</a>
@@ -892,8 +961,8 @@ Ratings &amp; Reviews
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/caleran.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-
 
 </body>
 </html>

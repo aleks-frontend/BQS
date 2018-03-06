@@ -325,6 +325,148 @@
     ]
   });
 
+  $('.js-date-picker-other').caleran({
+    singleDate: true,
+    startEmpty: false,
+    showOn: "top",
+    autoAlign: true,
+    autoCloseOnSelect: true,
+    calendarCount: 1,
+    format: 'MMMM D',
+    disabledRanges: [
+      {
+        start: moment("10/03/1999","MMMM DD, YYYY"),
+        end: moment(yesterday)
+      }    
+    ]
+  });
+
+  /* Datepicker and delivery button toggling */
+
+  var deliveryMonths = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ],
+  deliveryToday = new Date(),
+  deliveryTodayDD = today.getDate(),
+  deliveryTodayMM = deliveryMonths[today.getMonth()],
+  deliveryTodayYYYY = today.getFullYear(),
+  deliveryTomorrow = new Date();
+
+  deliveryTomorrow.setDate(today.getDate() + 1);
+  var deliveryTomorrowDD = deliveryTomorrow.getDate(),
+    deliveryTomorrowMM = deliveryMonths[deliveryTomorrow.getMonth()],
+    deliveryTomorrowYYYY = deliveryTomorrow.getFullYear(),
+    deliveryDayAfterTomorrow = new Date();
+
+  deliveryDayAfterTomorrow.setDate(deliveryToday.getDate() + 2);
+  var deliveryDayAfterTomorrowDD = deliveryDayAfterTomorrow.getDate(),
+      deliveryDayAfterTomorrowMM = deliveryMonths[deliveryDayAfterTomorrow.getMonth()];
+
+
+
+  $('.js-date-picker-today').text(deliveryTodayMM + ' ' + deliveryTodayDD);
+  $('.js-date-picker-tomorrow').text(deliveryTomorrowMM + ' ' + deliveryTomorrowDD);
+  $('.js-date-picker-other').text(deliveryDayAfterTomorrowMM + ' ' + deliveryDayAfterTomorrowDD); 
+
+  $('.js-delivery-date-toggle').on('click', function(e) {
+    $(this)
+      .closest('.prod-desc-box_three-col-grid')
+      .find('.js-delivery-date-toggle').removeClass('js-delivery-date-toggle_active');
+
+    $(this).addClass('js-delivery-date-toggle_active');
+
+    e.preventDefault();
+  });
+
+  $('.js-delivery-date-datepicker').on('click', function(e){
+    var $this = $(this),
+        datepickerWinWidth = $(window).width(),
+        datepickerButtonWidth = $this.outerWidth(),
+        datepickerPositionRight = $this.offset().left,
+        caleran = $(".js-date-picker-other").data("caleran");
+
+    $('.caleran-container.caleran-popup')
+      .css({
+        right: datepickerWinWidth - datepickerPositionRight - datepickerButtonWidth
+      }).addClass('delivery-date-position-right');
+      caleran.showDropdown(e);
+  });
+
+
+  /* Bundle Price Calculation and Selection
+  -------------------------------------------------------*/
+
+  $('.prod-desc-box_bundle-close-btn').on('click', function(e) {
+    var currentTotalPrice = parseFloat($('.prod-desc-box_total-price').text()),
+        bundlePrice = parseInt($('.prod-desc-box_bundle-price').text());
+
+    $(this).closest('.prod-desc-box_item-desc').hide();
+    $('.prod-desc-box_total-price').text(currentTotalPrice - bundlePrice);
+
+    $(this).closest('.prod-desc-box_bundle-body').find('.prod-desc-box_new-button').show();
+
+    e.preventDefault();
+  });
+
+  var bundleSlider = $('.bundle-slider').bxSlider({
+    onSliderLoad: function() {
+      $('.bundle-slider__wrapper').css('opacity', 1);
+    }
+  });
+
+  hideDetroyBundleSlider(bundleSlider);
+
+  $('.js-bundle-slider-trigger').on('click', function() {
+    showReloadBundleSlider(bundleSlider);
+  });
+
+  $('.bundle-slider__add-button').on('click', function() {
+    var $this = $(this),
+        bundleSliderContentWrapper = $this.closest('.bundle-slider__item-content'),
+        bundleSliderOverlay = $this.closest('.bundle-slider__overlay'),
+        bundleSliderHeading = bundleSliderContentWrapper.find('.bundle-slider__item-heading').text(),
+        bundleSliderPrice = bundleSliderContentWrapper.find('.bundle-slider__item-price').text(),
+        bundleSliderImagePath = $this.closest('.bundle-slider__item').find('.bundle-slider__item-photo').attr('src'),
+        bundleDescriptionBox = $('.prod-desc-box_item-desc'),
+        bundleTotalPriceContainer = $('.prod-desc-box_total-price'),
+        bundleTotalPriceValue = parseFloat(bundleTotalPriceContainer.text()) + parseInt(bundleSliderPrice);
+
+        bundleDescriptionBox.find('.prod-desc-box_bundle-title').text(bundleSliderHeading);
+        bundleDescriptionBox.find('.prod-desc-box_bundle-price').text(bundleSliderPrice);
+        bundleDescriptionBox.find('.prod-desc-box_bundle-photo').attr('src', bundleSliderImagePath);
+        bundleDescriptionBox.fadeIn(300);
+        bundleTotalPriceContainer.text(bundleTotalPriceValue);  
+        $('.prod-desc-box_new-button').hide();
+        hideDetroyBundleSlider(bundleSlider);
+  });
+
+  $('.bundle-slider__close-btn').on('click', function() {
+    hideDetroyBundleSlider(bundleSlider);
+  });
+
+  function showReloadBundleSlider(bundleSlider) {
+    $('.bundle-slider__overlay').fadeIn(300, function() {
+      bundleSlider.reloadSlider();
+    });
+  }
+
+  function hideDetroyBundleSlider(bundleSlider) {
+    $('.bundle-slider__overlay').fadeOut(300, function() {
+      $('.bundle-slider__wrapper').css('opacity', 0);
+      bundleSlider.destroySlider();      
+    });
+  }
 
   /* Owl Carousel
   -------------------------------------------------------*/
