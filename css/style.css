@@ -1667,6 +1667,50 @@ header .flex-child.flex-right {
   padding: 0 15px;
 }
 
+.navigation-cart-button-wrap {
+  position: relative;
+}
+
+.navigation-cart-button-wrap::after {
+  content: attr(data-cart-items);
+  overflow: hidden;
+  position: absolute;
+  display: none;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  color: #fff;
+  line-height: 20px;
+  background: #e94858;
+  border-radius: 50%;
+  text-align: center;
+  cursor: default;
+}
+
+.navigation-cart-button-wrap.has-rotate-animation::after {
+  animation: cart-rotate-animation 2s ease 1;
+}
+
+.navigation-cart-button-wrap.is-not-empty-cart::after {
+  display: block;
+}
+
+@keyframes cart-rotate-animation {
+
+  0% {
+    transform: rotate(0deg) scale(1, 1);
+  }
+  50% {
+    transform: rotate(720deg) scale(1.2, 1.2);  
+  }
+  100% {
+    transform: rotate(720deg) scale(1, 1);  
+  }
+
+}
+
 /* Menu Search
 -------------------------------------------------------*/
 .nav-search {
@@ -2543,6 +2587,10 @@ a.main-sidebar-btn-stick-top-right {
 
 .main-sidebar-location a > i {
   margin-right: 10px;
+}
+
+.has-dollar-prefix::before {
+  content: '$';
 }
 
 /*-------------------------------------------------------*/
@@ -6131,6 +6179,14 @@ hr.border-white {
     padding: 0 15px;
   }
 
+}
+
+.has-overflow-hidden {
+  overflow: hidden;
+}
+
+.has-cursor-default {
+  cursor: default;
 }
 
 /* Bundle Slider

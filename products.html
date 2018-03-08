@@ -140,7 +140,7 @@
 			  </a>
 			</li>
 			<li>
-			  <a href="#" class="txt_color_black">
+			  <a href="#" class="txt_color_black navigation-cart-button-wrap" data-cart-items="2">
 				<i class="icon icon-shopping-cart-secondary pxio-xs sidebar-trigger" data-sidebar="shopping-cart-sidebar"></i>
 			  </a>
 			</li>               
@@ -279,7 +279,7 @@
 		<div class="shopping-cart-item-main-info">
 		  <img src="img/shop/shop_item_20.jpg" alt="Shopping cart item 1" />
 		  <span class="shopping-cart-item-name">Snow white bowl</span>
-		  <span class="shopping-cart-item-price">$159.99</span>
+		  <span class="shopping-cart-item-price has-dollar-prefix">159.99</span>
 		  <a href="#" class="main-sidebar-custom-btn main-sidebar-cart-item-delete">
 			<i class="icon icon-cancel-circle pxio-xs"></i>
 		  </a>
@@ -329,7 +329,7 @@
 		<div class="shopping-cart-item-main-info">
 		  <img src="img/shop/shop_item_16.jpg" alt="Shopping cart item 1" />
 		  <span class="shopping-cart-item-name">Snow white bowl</span>
-		  <span class="shopping-cart-item-price">$159.99</span>
+		  <span class="shopping-cart-item-price has-dollar-prefix">159.99</span>
 		  <a href="#" class="main-sidebar-custom-btn main-sidebar-cart-item-delete">
 			<i class="icon icon-cancel-circle pxio-xs"></i>
 		  </a>
@@ -409,23 +409,23 @@
 	<ul class="main-sidebar-nav-wrap">
 	  <li class="main-sidebar-nav-item">
 		<span class="main-sidebar-nav-item-btn js-inner-dropdown-trigger">Cart subtotal:
-		  <span class="pull-right">$199.54</span>
+		  <span class="pull-right has-dollar-prefix js-sidemenu-cart-subtotal">199.54</span>
 		</span>
 	  </li>
 	  <li class="main-sidebar-nav-item">
 		<span class="main-sidebar-nav-item-btn js-inner-dropdown-trigger">Delivery charge:
-		  <span class="pull-right">$22.99</span>
+		  <span class="pull-right has-dollar-prefix js-sidemenu-delivery-charge">22.99</span>
 		</span>
 	  </li>
 	  <li class="main-sidebar-nav-item">
 		<span class="main-sidebar-nav-item-btn js-inner-dropdown-trigger">Taxes: 
-		  <span class="pull-right">$22.25</span>
+		  <span class="pull-right has-dollar-prefix js-sidemenu-taxes">22.25</span>
 		</span>
 	  </li>
 	</ul><!-- end main-sidebar-nav-wrap -->
 
 	<div class="text-center">
-	  <button class="main-sidebar-quick-checkout btn btn-lg btn-primary">Quick pay $224.78</button>
+	  <button class="main-sidebar-quick-checkout btn btn-lg btn-primary">Quick pay $<span class="js-quick-checkout-price">224.78</span></button>
 	</div><!-- end text-center -->
   </nav>
 </aside><!-- end shopping cart siderbar-->
@@ -498,7 +498,7 @@
 <div class="col-sm-6 col-xs-12 product-description-wrap mb-30">
 	<div class="prod-desc-box bg-white">
 		<div class="prod-desc-box_heading">
-			Lorem Ipsum Dolor
+			Some Product Name
 		</div>
 		<div class="prod-desc-box_two-col-grid">
 			<div class="prod-desc-box_two-col-grid-item">
@@ -560,7 +560,7 @@
 			</div><!-- end prod-desc-box_three-col-grid-item -->
 		</div><!-- end prod-desc-box_three-col-grid -->
 		<div class="prod-desc-box_footer">
-			<a href="#" class="btn btn-primary btn-lg btn-full-width"><span>Add To Cart</span></a>
+			<a href="#" class="btn btn-primary btn-lg btn-full-width js-add-cart-item" data-sidebar="shopping-cart-sidebar"><span>Add To Cart</span></a>
 		</div><!-- end prod-desc-box_footer -->
 	</div><!-- end prod-desc-box -->
 	</div> <!-- end col product description -->

@@ -448,7 +448,7 @@
         bundleDescriptionBox.fadeIn(300);
         bundleTotalPriceContainer.text(bundleTotalPriceValue);  
         $('.prod-desc-box_new-button').hide();
-        hideDetroyBundleSlider(bundleSlider);
+        hideDetroyBundleSlider(bundleSlider);        
   });
 
   $('.bundle-slider__close-btn').on('click', function() {
@@ -458,14 +458,175 @@
   function showReloadBundleSlider(bundleSlider) {
     $('.bundle-slider__overlay').fadeIn(300, function() {
       bundleSlider.reloadSlider();
+      $('body').addClass('has-overflow-hidden');
     });
   }
 
   function hideDetroyBundleSlider(bundleSlider) {
     $('.bundle-slider__overlay').fadeOut(300, function() {
       $('.bundle-slider__wrapper').css('opacity', 0);
-      bundleSlider.destroySlider();      
+      bundleSlider.destroySlider(); 
+      $('body').removeClass('has-overflow-hidden');     
     });
+  }
+
+  /* Adding and removing the cart items from the sidebar
+  -------------------------------------------------------*/
+
+  updateShoppingCartCounter();
+  cartTotalCalculation();
+
+  $('.js-add-cart-item').on('click', function(e) {
+    var $this = $(this),
+        productWrap = $this.closest('.single-product'),
+        productPhoto = productWrap.find('.gallery-cell').first().find('img').attr('src'),
+        productTitle = productWrap.find('.prod-desc-box_heading').text().trim(),
+        productPriceTotal = productWrap.find('.prod-desc-box_total-price').text().trim();        
+
+      if ( $this.hasClass('has-cursor-default') ) {
+        return;
+      }
+
+      $('.main-sidebar-nav-shopping-cart-items').prepend(
+        '<li class="main-sidebar-nav-item has-big-bottom-margin">\
+          <div class="shopping-cart-item-main-info">\
+            <img src="img/shop/shop_item_20.jpg" alt="Shopping cart item 1" />\
+            <span class="shopping-cart-item-name">' + productTitle + '</span>\
+            <span class="shopping-cart-item-price has-dollar-prefix">' + productPriceTotal + '</span>\
+            <a href="#" class="main-sidebar-custom-btn main-sidebar-cart-item-delete">\
+            <i class="icon icon-cancel-circle pxio-xs"></i>\
+            </a>\
+          </div><!-- end shopping-cart-item-main-info -->\
+          <div class="shopping-cart-item-footer">\
+            <a href="#" class="main-sidebar-nav-item-btn is-not-full-width-btn js-inner-dropdown-trigger">\
+              <i class="icon icon-add-location pxio-xs pull-left"></i> <span>Recipient\'s location</span>\
+            </a>\
+            <a href="#" class="main-sidebar-custom-btn main-sidebar-btn-stick-top-right js-notes-dropdown-trigger">\
+            <i class="icon icon-chat-square-alt pxio-xs" style="margin-right: 10px;"></i><span>Notes</span>\
+            </a>\
+            <ul class="main-sidebar-nav-wrap has-no-bottom-margin is-main-sidebar-inner-dropdown">\
+              <li class="main-sidebar-nav-item">\
+              <a href="#" class="main-sidebar-nav-item-btn">Pick up at store</a>\
+              </li>\
+              <li class="main-sidebar-nav-item">\
+              <a href="#" class="main-sidebar-nav-item-btn">New address</a>\
+              </li>\
+              <li class="main-sidebar-nav-item">\
+                <a href="#" class="main-sidebar-nav-item-btn">333 Anthony Trail\
+                <i class="icon icon-geolocation-pin pxio-xs"></i>\
+                </a>\
+              </li>     \
+              <li class="main-sidebar-nav-item">\
+                <a href="#" class="main-sidebar-nav-item-btn">1020 Beechwood Dr\
+                <i class="icon icon-geolocation-pin pxio-xs"></i>\
+                </a>\
+              </li>     \
+              <li class="main-sidebar-nav-item">\
+                <a href="#" class="main-sidebar-nav-item-btn">1230 Grand ave\
+                <i class="icon icon-geolocation-pin pxio-xs"></i>\
+                </a>\
+              </li>     \
+            </ul><!-- end main-sidebar-nav-wrap -->\
+            <div class="is-main-sidebar-notes-dropdown">\
+              <div class="shopping-cart-item-notes-wrapper">\
+              <i class="icon icon-pencil-alt pxio-xs"></i>\
+              <textarea placeholder="Your personal message"></textarea>\
+            </div><!-- end shopping-cart-item-notes-wrapper -->\
+            <button class="main-sidebar-inner-custom-button js-hide-dropdown btn btn-primary btn-sm">Save</button>\
+            </div><!-- end shopping-cart-item-notes-dropdown -->\
+          </div><!-- end shopping-cart-item-footer -->\
+        </li>'
+        );
+
+      $this
+        .removeClass('btn-alternative')
+        .addClass('btn-stroke has-cursor-default')
+        .find('span')
+          .text('Added to cart');
+
+      updateShoppingCartCounter();
+      cartTotalCalculation();
+      sidebarShow.call($this, e);
+
+    e.preventDefault();
+  });
+
+  $('.main-sidebar-nav-shopping-cart-items').on('click', '.main-sidebar-cart-item-delete', function(e) {
+    $(this).closest('.main-sidebar-nav-item').fadeOut(300, function() {
+      $(this).closest('.main-sidebar-nav-item').remove();
+      updateShoppingCartCounter(true);
+      cartTotalCalculation();
+    });
+
+    e.preventDefault();
+  });
+
+  function updateShoppingCartCounter(deleteOperation) {
+    var cartItems = $('.main-sidebar-nav-wrap.main-sidebar-nav-shopping-cart-items > .main-sidebar-nav-item'),
+        cartItemsLength = cartItems.length;
+
+    if ( !deleteOperation ) {    
+
+      if ( cartItemsLength > 0 ) {
+        $('.navigation-cart-button-wrap')
+          .attr('data-cart-items', cartItemsLength)
+          .addClass('is-not-empty-cart has-rotate-animation');
+          setTimeout(function() {
+            $('.navigation-cart-button-wrap').removeClass('has-rotate-animation');
+          }, 2000);
+      } else {
+        $('.navigation-cart-button-wrap').removeClass('is-not-empty-cart');
+      }
+
+    } else {
+      if ( cartItemsLength > 0 ) {
+        $('.navigation-cart-button-wrap')
+          .attr('data-cart-items', cartItemsLength)
+          .addClass('is-not-empty-cart has-rotate-animation');
+          setTimeout(function() {
+            $('.navigation-cart-button-wrap').removeClass('has-rotate-animation');
+          }, 2000);
+      } else {
+        $('.navigation-cart-button-wrap')
+          .attr('data-cart-items', 0)
+          .removeClass('is-not-empty-cart');
+      }
+    }
+
+  }
+
+
+  function cartTotalCalculation() {
+    var cartItems = $('.main-sidebar-nav-wrap.main-sidebar-nav-shopping-cart-items > .main-sidebar-nav-item'),
+        cartSubtotal = 0,
+        deliveryCharge = parseFloat($('.js-sidemenu-delivery-charge').text()),
+        taxes = parseFloat($('.js-sidemenu-taxes').text()),
+        cartTotalCheckout = deliveryCharge + taxes,
+        emptyCartCheck = false;
+
+    cartItems.each(function() {
+      var cartItemPrice = Math.round($(this).find('.shopping-cart-item-price').text());
+
+      cartSubtotal += cartItemPrice;
+    });
+
+    cartTotalCheckout += cartSubtotal;
+
+    if ( cartSubtotal == 0 ) {
+      emptyCartCheck = true;
+    } else {
+      emptyCartCheck = false;
+    }
+
+    $('.js-sidemenu-cart-subtotal').text(cartSubtotal);
+
+    if ( !emptyCartCheck ) {
+      $('.main-sidebar-quick-checkout')
+        .removeClass('btn-secondary has-cursor-default')
+        .html('QUICK PAY $' + cartTotalCheckout);      
+    } else {
+      $('.main-sidebar-quick-checkout').addClass('btn-secondary has-cursor-default').html('Cart Empty');
+    }
   }
 
   /* Owl Carousel
