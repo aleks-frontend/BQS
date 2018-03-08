@@ -166,7 +166,10 @@
       right: 0
     });
 
-    $('body').prepend('<div class="sidebar-overlay"></div>');
+    $('body')
+      .prepend('<div class="sidebar-overlay"></div>')
+      .addClass('has-overflow-hidden');
+
     $('.sidebar-overlay')
       .fadeIn(300)
       .on('click', sidebarHide);
@@ -187,7 +190,7 @@
       $(this).remove();
     });
 
-    $('body').removeAttr('style');
+    $('body').removeClass('has-overflow-hidden');
 
     e.preventDefault();    
   }
@@ -195,18 +198,6 @@
   $('.sidebar-trigger').on('click', sidebarShow);
   $('.main-sidebar-btn-close').on('click', sidebarHide);
 	
-	
-	$(window).ready(function(){
-  	$('.sidebar-trigger').click(function(){
-    	$('body').width($('body').width());
-    	$('body').css('overflow', 'hidden');
-    	$('.sidebar-overlay').css('display', 'block');
-  	});
-  	$('.main-sidebar-btn-close').click(function(){
-    	$('body, .sidebar-overlay').removeAttr('style');
-  	});
-	});
-
   /* Toggling the visibility of the inner dropdowns inside the sidebar
   -------------------------------------------------------*/
 
