@@ -252,6 +252,10 @@
       types: ['(regions)'] // (cities)
     };
 
+    if ( input == undefined ) {
+      return;
+    }
+
     autocomplete = new google.maps.places.Autocomplete(input,options);
 
     $('#go').click(function(){
@@ -300,37 +304,42 @@
 
   yesterday.setDate(today.getDate() -1);
 
-  $('.hero-select-date').caleran({
-    singleDate: true,
-    startEmpty: true,
-    showOn: "bottom",
-    autoAlign: false,
-    autoCloseOnSelect: true,
-    calendarCount: 1,
-    format: 'MMMM DD, YYYY',
-    disabledRanges: [
-      {
-        start: moment("10/03/1999","MMMM DD, YYYY"),
-        end: moment(yesterday)
-      }    
-    ]
-  });
+  if ( $('.hero-select-date').length > 0 ) {
+    $('.hero-select-date').caleran({
+      singleDate: true,
+      startEmpty: true,
+      showOn: "bottom",
+      autoAlign: false,
+      autoCloseOnSelect: true,
+      calendarCount: 1,
+      format: 'MMMM DD, YYYY',
+      disabledRanges: [
+        {
+          start: moment("10/03/1999","MMMM DD, YYYY"),
+          end: moment(yesterday)
+        }    
+      ]
+    });    
+  }
 
-  $('.js-date-picker-other').caleran({
-    singleDate: true,
-    startEmpty: false,
-    showOn: "top",
-    autoAlign: true,
-    autoCloseOnSelect: true,
-    calendarCount: 1,
-    format: 'MMMM D',
-    disabledRanges: [
-      {
-        start: moment("10/03/1999","MMMM DD, YYYY"),
-        end: moment(yesterday)
-      }    
-    ]
-  });
+
+  if ( $('.js-date-picker-other').length > 0 ) {
+    $('.js-date-picker-other').caleran({
+      singleDate: true,
+      startEmpty: false,
+      showOn: "top",
+      autoAlign: true,
+      autoCloseOnSelect: true,
+      calendarCount: 1,
+      format: 'MMMM D',
+      disabledRanges: [
+        {
+          start: moment("10/03/1999","MMMM DD, YYYY"),
+          end: moment(yesterday)
+        }    
+      ]
+    });    
+  }
 
   /* Datepicker and delivery button toggling */
 
@@ -410,56 +419,60 @@
     e.preventDefault();
   });
 
-  var bundleSlider = $('.bundle-slider').bxSlider({
-    onSliderLoad: function() {
-      $('.bundle-slider__wrapper').css('opacity', 1);
-    }
-  });
+  if ( $('.bundle-slider').length > 0 ) {
+    var bundleSlider = $('.bundle-slider').bxSlider({
+      onSliderLoad: function() {
+        $('.bundle-slider__wrapper').css('opacity', 1);
+      }
+    });
 
-  hideDetroyBundleSlider(bundleSlider);
-
-  $('.js-bundle-slider-trigger').on('click', function() {
-    showReloadBundleSlider(bundleSlider);
-  });
-
-  $('.bundle-slider__add-button').on('click', function() {
-    var $this = $(this),
-        bundleSliderContentWrapper = $this.closest('.bundle-slider__item-content'),
-        bundleSliderOverlay = $this.closest('.bundle-slider__overlay'),
-        bundleSliderHeading = bundleSliderContentWrapper.find('.bundle-slider__item-heading').text(),
-        bundleSliderPrice = bundleSliderContentWrapper.find('.bundle-slider__item-price').text(),
-        bundleSliderImagePath = $this.closest('.bundle-slider__item').find('.bundle-slider__item-photo').attr('src'),
-        bundleDescriptionBox = $('.prod-desc-box_item-desc'),
-        bundleTotalPriceContainer = $('.prod-desc-box_total-price'),
-        bundleTotalPriceValue = parseFloat(bundleTotalPriceContainer.text()) + parseInt(bundleSliderPrice);
-
-        bundleDescriptionBox.find('.prod-desc-box_bundle-title').text(bundleSliderHeading);
-        bundleDescriptionBox.find('.prod-desc-box_bundle-price').text(bundleSliderPrice);
-        bundleDescriptionBox.find('.prod-desc-box_bundle-photo').attr('src', bundleSliderImagePath);
-        bundleDescriptionBox.fadeIn(300);
-        bundleTotalPriceContainer.text(bundleTotalPriceValue);  
-        $('.prod-desc-box_new-button').hide();
-        hideDetroyBundleSlider(bundleSlider);        
-  });
-
-  $('.bundle-slider__close-btn').on('click', function() {
     hideDetroyBundleSlider(bundleSlider);
-  });
 
-  function showReloadBundleSlider(bundleSlider) {
-    $('.bundle-slider__overlay').fadeIn(300, function() {
-      bundleSlider.reloadSlider();
-      $('body').addClass('has-overflow-hidden');
+    $('.js-bundle-slider-trigger').on('click', function() {
+      showReloadBundleSlider(bundleSlider);
     });
+
+    $('.bundle-slider__add-button').on('click', function() {
+      var $this = $(this),
+          bundleSliderContentWrapper = $this.closest('.bundle-slider__item-content'),
+          bundleSliderOverlay = $this.closest('.bundle-slider__overlay'),
+          bundleSliderHeading = bundleSliderContentWrapper.find('.bundle-slider__item-heading').text(),
+          bundleSliderPrice = bundleSliderContentWrapper.find('.bundle-slider__item-price').text(),
+          bundleSliderImagePath = $this.closest('.bundle-slider__item').find('.bundle-slider__item-photo').attr('src'),
+          bundleDescriptionBox = $('.prod-desc-box_item-desc'),
+          bundleTotalPriceContainer = $('.prod-desc-box_total-price'),
+          bundleTotalPriceValue = parseFloat(bundleTotalPriceContainer.text()) + parseInt(bundleSliderPrice);
+
+          bundleDescriptionBox.find('.prod-desc-box_bundle-title').text(bundleSliderHeading);
+          bundleDescriptionBox.find('.prod-desc-box_bundle-price').text(bundleSliderPrice);
+          bundleDescriptionBox.find('.prod-desc-box_bundle-photo').attr('src', bundleSliderImagePath);
+          bundleDescriptionBox.fadeIn(300);
+          bundleTotalPriceContainer.text(bundleTotalPriceValue);  
+          $('.prod-desc-box_new-button').hide();
+          hideDetroyBundleSlider(bundleSlider);        
+    });
+
+    $('.bundle-slider__close-btn').on('click', function() {
+      hideDetroyBundleSlider(bundleSlider);
+    });
+
+    function showReloadBundleSlider(bundleSlider) {
+      $('.bundle-slider__overlay').fadeIn(300, function() {
+        bundleSlider.reloadSlider();
+        $('body').addClass('has-overflow-hidden');
+      });
+    }
+
+    function hideDetroyBundleSlider(bundleSlider) {
+      $('.bundle-slider__overlay').fadeOut(300, function() {
+        $('.bundle-slider__wrapper').css('opacity', 0);
+        bundleSlider.destroySlider(); 
+        $('body').removeClass('has-overflow-hidden');     
+      });
+    }
+    
   }
 
-  function hideDetroyBundleSlider(bundleSlider) {
-    $('.bundle-slider__overlay').fadeOut(300, function() {
-      $('.bundle-slider__wrapper').css('opacity', 0);
-      bundleSlider.destroySlider(); 
-      $('body').removeClass('has-overflow-hidden');     
-    });
-  }
 
   /* Adding and removing the cart items from the sidebar
   -------------------------------------------------------*/
