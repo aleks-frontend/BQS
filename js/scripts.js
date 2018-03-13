@@ -233,6 +233,64 @@
     e.preventDefault();
   });
 
+  /* 'Hand delivery popup' Controls
+  -------------------------------------------------------*/
+
+  $('.js-delivery-method-select-hand-deliver').on('click', function(e) {
+    $('.hand-delivery-modal__overlay').fadeIn(300, function(){
+      if ( $('.js-delivery-method-select-is-active').length > 0 ) {
+        $('.js-delivery-method-select-is-active').removeClass('js-delivery-method-select-is-active');
+      }
+      $('.js-delivery-method-select-hand-deliver').addClass('js-delivery-method-select-is-active');
+    });
+    e.preventDefault();
+  });
+
+  $('.js-hand-delivery-location-dropdown-trigger').on('click', function() {
+    $(this)
+      .closest('.hand-delivery-modal')
+      .find('.hand-delivery-modal__location-dropdown')
+        .slideToggle(300);
+  });
+
+  $('.hand-delivery-modal__location-dropdown-item > a').on('click', function(e) {
+    var $this = $(this);
+    var newTextVal = $(this).text();
+    
+    $this
+      .closest('.hand-delivery-modal__location-dropdown').slideUp(300);
+
+    $this
+      .closest('.hand-delivery-modal')
+      .find('.js-hand-delivery-location-dropdown-trigger').text(newTextVal);
+
+    e.preventDefault();
+  });
+
+  $('.hand-delivery-modal__close-btn, .hand-delivery-modal__submit-button').on('click', function() {
+    $(this)
+      .closest('.hand-delivery-modal__overlay')
+        .fadeOut(300);
+  });
+
+    /* 'Pickup in store popup' Controls
+  -------------------------------------------------------*/
+
+  $('.js-delivery-method-select-pickup-in-store').on('click', function(e) {
+    $('.pickup-modal__overlay').fadeIn(300, function(){
+      if ( $('.js-delivery-method-select-is-active').length > 0 ) {
+        $('.js-delivery-method-select-is-active').removeClass('js-delivery-method-select-is-active');
+      }
+      $('.js-delivery-method-select-pickup-in-store').addClass('js-delivery-method-select-is-active');
+    });
+
+    e.preventDefault();
+  });
+
+  $('.pickup-modal__close-btn, .pickup-modal__select-button').on('click', function() {
+    $('.pickup-modal__overlay').fadeOut(300);
+  });
+
 
   /* Full-screen Hero Height
   -------------------------------------------------------*/

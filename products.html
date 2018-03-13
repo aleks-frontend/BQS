@@ -94,6 +94,50 @@
 		</div><!-- end bundle-slider__wrapper -->
 	</div><!-- end bundle-slider__overlay -->
 
+	<div class="pickup-modal__overlay">
+		<div class="pickup-modal">
+			<div class="pickup-modal__map" id="pickup-modal__map-1"></div><!-- end pickup-modal__map -->
+			<div class="pickup-modal__content">
+				<div class="pickup-modal__content-heading">
+					The Greenwhich Florists
+					<button class="pickup-modal__close-btn"><i class="icon icon-close-x pxio-xs"></i></button>
+				</div><!-- end pickup-modal__content-heading -->
+				<div class="pickup-modal__content-description">
+					<p>
+						546 N Western Ave<br />
+Lake Forest, IL 60045
+					</p>
+				</div><!-- end pickup-modal__content-description -->
+				<button class="pickup-modal__select-button">Select</button>
+			</div><!-- end pickup-modal__content -->
+		</div><!-- end pickup-modal -->
+	</div><!-- end pickup-modal__overlay -->
+
+	<div class="hand-delivery-modal__overlay">
+		<div class="hand-delivery-modal">
+			<div class="hand-delivery-modal__location">
+				<i class="icon icon-geolocation-pin pxio-xs mr-10 pull-left"></i> <span class="js-hand-delivery-location-dropdown-trigger">Recipient's Address</span>
+				<button class="hand-delivery-modal__close-btn"><i class="icon icon-close-x pxio-xs"></i></button>
+				<ul class="hand-delivery-modal__location-dropdown">
+					<li class="hand-delivery-modal__location-dropdown-item">
+						<a href="#">New address</a>
+					</li>
+					<li class="hand-delivery-modal__location-dropdown-item">
+						<a href="#">1020 S Beechwood Dr <i class="icon icon-geolocation-pin pxio-xs pull-right"></i></a>
+					</li>
+					<li class="hand-delivery-modal__location-dropdown-item">
+						<a href="#">1020 S Beechwood Dr <i class="icon icon-geolocation-pin pxio-xs pull-right"></i></a>
+					</li>
+					<li class="hand-delivery-modal__location-dropdown-item">
+						<a href="#">1020 S Beechwood Dr <i class="icon icon-geolocation-pin pxio-xs pull-right"></i></a>
+					</li>
+				</ul><!-- end hand-delivery-modal__location-dropdown -->
+			</div><!-- end hand-delivery-modal__location -->
+			<textarea class="hand-delivery-modal__note" placeholder="Add a Personal Note"></textarea>
+			<button class="hand-delivery-modal__submit-button">Submit</button>
+		</div><!-- end pickup-modal -->
+	</div><!-- end pickup-modal__overlay -->	
+
 <main class="main-wrapper">
 
 <header>
@@ -517,10 +561,10 @@
 		<span class="prod-desc-box_total-price">149.99</span>
 		<div class="prod-desc-box_two-col-grid">
 			<div class="prod-desc-box_two-col-grid-item">
-				<a href="#" class="btn btn-selection btn-full-width btn-gray"><i class="icon icon-delivery-truck-alt pxio-xs"></i><span>Hand Deliver</span></a>
+				<a href="#" class="btn btn-selection btn-full-width btn-gray js-delivery-method-select-hand-deliver"><i class="icon icon-delivery-truck-alt pxio-xs"></i><span>Hand Deliver</span></a>
 			</div><!-- end prod-desc-box_two-col-grid-item -->
 			<div class="prod-desc-box_two-col-grid-item">
-				<a href="#" class="btn btn-selection btn-full-width btn-gray"><i class="icon icon-storefront pxio-xs"></i><span>Pickup in Store</span></a>
+				<a href="#" class="btn btn-selection btn-full-width btn-gray js-delivery-method-select-pickup-in-store"><i class="icon icon-storefront pxio-xs"></i><span>Pickup in Store</span></a>
 			</div><!-- end prod-desc-box_two-col-grid-item -->
 		</div><!-- end prod-desc-box_two-col-grid -->
 		<div class="prod-desc-box_bundle">
@@ -957,7 +1001,206 @@ Ratings &amp; Reviews
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/gmap3.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy4ZROOcKg7uNUVXdtBHM6IiYCPTCywq0&libraries=places"></script>
+<script type="text/javascript">
+  function initMap() {
+    var uluru = {lat: 42.251819, lng: -87.839492};
+    var map = new google.maps.Map(document.getElementById('pickup-modal__map-1'), {
+      zoom: 14,
+      center: uluru,
+      style: [
+		    {
+		        "featureType": "water",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#d3d3d3"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "transit",
+		        "stylers": [
+		            {
+		                "color": "#808080"
+		            },
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.highway",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#b3b3b3"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.highway",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.local",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#ffffff"
+		            },
+		            {
+		                "weight": 1.8
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.local",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "color": "#d7d7d7"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#ebebeb"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative",
+		        "elementType": "geometry",
+		        "stylers": [
+		            {
+		                "color": "#a7a7a7"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.arterial",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.arterial",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#ffffff"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "landscape",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#efefef"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "labels.text.fill",
+		        "stylers": [
+		            {
+		                "color": "#696969"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "administrative",
+		        "elementType": "labels.text.fill",
+		        "stylers": [
+		            {
+		                "visibility": "on"
+		            },
+		            {
+		                "color": "#737373"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi",
+		        "elementType": "labels.icon",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "poi",
+		        "elementType": "labels",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road.arterial",
+		        "elementType": "geometry.stroke",
+		        "stylers": [
+		            {
+		                "color": "#d6d6d6"
+		            }
+		        ]
+		    },
+		    {
+		        "featureType": "road",
+		        "elementType": "labels.icon",
+		        "stylers": [
+		            {
+		                "visibility": "off"
+		            }
+		        ]
+		    },
+		    {},
+		    {
+		        "featureType": "poi",
+		        "elementType": "geometry.fill",
+		        "stylers": [
+		            {
+		                "color": "#dadada"
+		            }
+		        ]
+		    }
+		]
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+  }
+  
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy4ZROOcKg7uNUVXdtBHM6IiYCPTCywq0&libraries=places&callback=initMap"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/caleran.min.js"></script>

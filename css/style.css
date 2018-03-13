@@ -6021,6 +6021,11 @@ hr.border-white {
   content: '$';
 }
 
+.btn.btn-gray.js-delivery-method-select-is-active {
+  background: #fff;
+  border-color: #E5E4E5;
+}
+
 .prod-desc-box_two-col-grid-item a.btn > i {
   margin-right: 8px;
 }
@@ -6362,6 +6367,225 @@ hr.border-white {
 
   .bundle-slider__wrapper .bx-controls {
     display: none;
+  }
+
+}
+
+/* Pickup modal popup
+-------------------------------------------------------*/
+.pickup-modal__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, 0.5);
+  z-index: 997;
+}
+
+.pickup-modal {
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 300px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+
+.pickup-modal__map {
+  float: left;
+  width: 300px;
+  height: 300px;  
+}
+
+.pickup-modal__content {
+  float: left;
+  padding: 30px;
+  width: 300px;
+  background: #fff;
+}
+
+.pickup-modal__content-heading {
+  position: relative;
+  padding-right: 40px;
+  font-size: 16px;
+  line-height: 75px;
+  border-bottom: 1px solid #E5E4E5;
+}
+
+.pickup-modal__content-description {
+  margin: 15px 0 25px;
+  height: 75px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.pickup-modal__content-description > p {
+  font-size: 16px;
+  line-height: 19.2px;
+  color: #000;
+}
+
+.pickup-modal__select-button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.pickup-modal__close-btn {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  border: none;
+  background: transparent;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+@media screen and (max-width: 640px) {
+
+  .pickup-modal {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .pickup-modal {
+    width: 100%;
+    max-width: 300px;
+    height: 600px;
+  }
+
+}
+
+/* Hand delivery modal popup
+-------------------------------------------------------*/
+.hand-delivery-modal__overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, 0.5);
+  z-index: 997;
+}
+
+.hand-delivery-modal {
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  width: 600px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+
+.hand-delivery-modal__location {
+  position: relative;
+  height: 75px;
+  border-bottom: 1px solid #E5E4E5;
+  z-index: 1;
+}
+
+.hand-delivery-modal__location > span {
+  display: block;
+  height: 75px;
+  font-size: 16px;
+  color: #000;
+  line-height: 75px;
+  cursor: pointer;
+}
+
+.hand-delivery-modal__location > i.icon {
+  line-height: 75px;
+}
+
+.hand-delivery-modal__location-dropdown {
+  position: absolute;
+  display: none;
+  top: 75px;
+  left: 0;
+  right: 0;
+}
+
+.hand-delivery-modal__location-dropdown-item {
+  display: block;
+  padding: 0 15px;
+  height: 50px;
+  line-height: 50px;
+  background: #F7F8F9;
+  border-bottom: 1px solid #E5E4E5;
+}
+
+.hand-delivery-modal__location-dropdown-item > a {
+  display: block;
+  width: 100%;
+}
+
+.hand-delivery-modal__location-dropdown-item > a > i.icon {
+  line-height: 50px;
+}
+
+.hand-delivery-modal__note {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 149px;
+  padding: 30px 0;
+  border: none;
+  resize: none;
+  z-index: 0;
+}
+
+.hand-delivery-modal__submit-button {
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hand-delivery-modal__close-btn {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  border: none;
+  background: transparent;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+@media screen and (max-width: 640px) {
+
+  .hand-delivery-modal {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .hand-delivery-modal {
+    width: 100%;
+    max-width: 300px;
+    height: 600px;
   }
 
 }
