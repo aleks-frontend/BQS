@@ -214,22 +214,53 @@
   function setLocationLabel(e) {
     var $this = $(this);
     var newTextVal = $(this).text();
+
+    if ( $(e.target).closest('.main-sidebar-nav-subitem').hasClass('non-active') ) {
+      e.preventDefault();    
+      return;
+    }
     
-    $this
-      .closest('.is-main-sidebar-inner-dropdown').slideUp(300)
-      .siblings('.js-inner-dropdown-trigger').find('span').text(newTextVal);
+    if ( $(e.target).closest('.main-sidebar-nav-item-btn').hasClass('main-sidebar-nav-subitem-is-new-address') ) {
+        $('.new-address-modal__overlay').addClass('is-visible');
+        sidebarHide(e);
+    } else {
+      $this
+        .closest('.is-main-sidebar-inner-dropdown').slideUp(300)
+        .siblings('.js-inner-dropdown-trigger').find('span').text(newTextVal);      
+    }
 
     e.preventDefault();    
   }
 
-  $('.js-inner-dropdown-trigger').on('click', innerDropdownToggler);
-  $('.js-notes-dropdown-trigger').on('click', notesDropdownToggler);  
-  $('.is-main-sidebar-inner-dropdown li a').on('click', setLocationLabel);
+  /* Testing textarea check */
 
-  $('.js-hide-dropdown').on('click', function(e) {
+  cartItemNotesCheck();
+
+  function cartItemNotesCheck() {
+    if ( $('.shopping-cart-item-notes-wrapper').length > 0 ) {
+      $('.shopping-cart-item-notes-wrapper').each(function(index, elem) {
+        if ( $(elem).find('textarea').val() == '' ) {
+          $(elem)
+            .closest('.shopping-cart-item-footer')
+            .find('.js-notes-dropdown-trigger').addClass('js-notes-dropdown-trigger-is-empty');
+        } else {
+          $(elem)
+            .closest('.shopping-cart-item-footer')
+            .find('.js-notes-dropdown-trigger').removeClass('js-notes-dropdown-trigger-is-empty');  
+        }
+      });      
+    }
+  }
+
+  $('.main-sidebar-nav-shopping-cart-items').on('click', '.js-inner-dropdown-trigger', innerDropdownToggler);
+  $('.main-sidebar-nav-shopping-cart-items').on('click', '.js-notes-dropdown-trigger', notesDropdownToggler);  
+  $('.main-sidebar-nav-shopping-cart-items').on('click', '.is-main-sidebar-inner-dropdown li a', setLocationLabel);
+
+  $('.main-sidebar-nav-shopping-cart-items').on('click', '.js-hide-dropdown', function(e) {
     $(this)
       .closest('.is-main-sidebar-notes-dropdown').slideUp(300);
 
+    cartItemNotesCheck();  
     e.preventDefault();
   });
 
@@ -273,6 +304,19 @@
         .fadeOut(300);
   });
 
+  $('.hand-delivery-modal__submit-button').on('click', function() {
+    var $this = $(this),
+        notesValue = $this.closest('.hand-delivery-modal').find('textarea.hand-delivery-modal__note').val(),
+        deliveryLocation = $this.closest('.hand-delivery-modal').find('.js-hand-delivery-location-dropdown-trigger').text();        
+
+    $('.js-add-cart-item').data(
+      {
+        'notesValue': notesValue, 
+        'deliveryLocation': deliveryLocation
+      }
+    );
+  })
+
     /* 'Pickup in store popup' Controls
   -------------------------------------------------------*/
 
@@ -291,6 +335,15 @@
     $('.pickup-modal__overlay').fadeOut(300);
   });
 
+  /* New Address Popup Controls
+  -------------------------------------------------------*/
+
+  $('.new-address-modal__overlay').on('click', function(e) {
+    if ( !$(e.target).closest('.container').length > 0 ) {
+      $(this).removeClass('is-visible');
+      sidebarShow.call($(this), e);
+    }
+  })
 
   /* Full-screen Hero Height
   -------------------------------------------------------*/
@@ -543,7 +596,9 @@
         productWrap = $this.closest('.single-product'),
         productPhoto = productWrap.find('.gallery-cell').first().find('img').attr('src'),
         productTitle = productWrap.find('.prod-desc-box_heading').text().trim(),
-        productPriceTotal = productWrap.find('.prod-desc-box_total-price').text().trim();        
+        productPriceTotal = productWrap.find('.prod-desc-box_total-price').text().trim(),
+        notesValue = $this.data('notesValue'),
+        deliveryLocation = ($this.data('deliveryLocation') !== undefined) ? $this.data('deliveryLocation') : 'Recipient\'s location';
 
       if ( $this.hasClass('has-cursor-default') ) {
         return;
@@ -561,7 +616,7 @@
           </div><!-- end shopping-cart-item-main-info -->\
           <div class="shopping-cart-item-footer">\
             <a href="#" class="main-sidebar-nav-item-btn is-not-full-width-btn js-inner-dropdown-trigger">\
-              <i class="icon icon-add-location pxio-xs pull-left"></i> <span>Recipient\'s location</span>\
+              <i class="icon icon-add-location pxio-xs pull-left"></i> <span>' + deliveryLocation + '</span>\
             </a>\
             <a href="#" class="main-sidebar-custom-btn main-sidebar-btn-stick-top-right js-notes-dropdown-trigger">\
             <i class="icon icon-chat-square-alt pxio-xs" style="margin-right: 10px;"></i><span>Notes</span>\
@@ -571,7 +626,7 @@
               <a href="#" class="main-sidebar-nav-item-btn">Pick up at store</a>\
               </li>\
               <li class="main-sidebar-nav-item">\
-              <a href="#" class="main-sidebar-nav-item-btn">New address</a>\
+              <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem-is-new-address">New address</a>\
               </li>\
               <li class="main-sidebar-nav-item">\
                 <a href="#" class="main-sidebar-nav-item-btn">333 Anthony Trail\
@@ -592,7 +647,7 @@
             <div class="is-main-sidebar-notes-dropdown">\
               <div class="shopping-cart-item-notes-wrapper">\
               <i class="icon icon-pencil-alt pxio-xs"></i>\
-              <textarea placeholder="Your personal message"></textarea>\
+              <textarea placeholder="Your personal message">' + notesValue + '</textarea>\
             </div><!-- end shopping-cart-item-notes-wrapper -->\
             <button class="main-sidebar-inner-custom-button js-hide-dropdown btn btn-primary btn-sm">Save</button>\
             </div><!-- end shopping-cart-item-notes-dropdown -->\
@@ -608,6 +663,7 @@
 
       updateShoppingCartCounter();
       cartTotalCalculation();
+      cartItemNotesCheck();      
       sidebarShow.call($this, e);
 
     e.preventDefault();
@@ -684,10 +740,10 @@
 
     if ( !emptyCartCheck ) {
       $('.main-sidebar-quick-checkout')
-        .removeClass('btn-secondary has-cursor-default')
+        .removeClass('btn-alternative has-cursor-default')
         .html('QUICK PAY $' + cartTotalCheckout);      
     } else {
-      $('.main-sidebar-quick-checkout').addClass('btn-secondary has-cursor-default').html('Cart Empty');
+      $('.main-sidebar-quick-checkout').addClass('btn-alternative has-cursor-default').html('Cart Is Empty');
     }
   }
 

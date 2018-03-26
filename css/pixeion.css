@@ -1,37 +1,36 @@
 @charset "UTF-8";
 
 .pxio-xxs {
-  font-size:1em;
-  line-height:.75em;
-  vertical-align:-15%;
+  font-size:1.15em;
+  line-height: 1.15em;
+  vertical-align:middle;
+  top: 0px;
 }
 
 .pxio-xs {
-  font-size:1.33333333em;
-  line-height:.75em;
-  vertical-align:-15%;
+  font-size:1.33em;
+  line-height: 1.33em;
+  vertical-align:middle;
 }
 
 .pxio-sm {
-  font-size:2.33em;
-  line-height:.75em;
-  vertical-align:-15%;
+  font-size:1.50em;
+  line-height: 1.50em;
+  vertical-align:middle;
+
 }
 
 .pxio-md {
-  font-size:2.75em;
-  line-height:.75em;
-  vertical-align:-15%;
+  font-size:1.75em;
+  vertical-align:middle;
 }
 
 .pxio-lg {
-  font-size:3.33em;
-  line-height:.75em;
-  vertical-align:-15%;
+  font-size:2.33em;
+  vertical-align:middle;
 }
 
 .pxio-xl {
-  font-size:3.75em;
-  line-height:.75em;
-  vertical-align:-15%;
+  font-size:2.75em;
+  vertical-align:middle;
 }

@@ -358,38 +358,66 @@
 </header>
 
 <div class="content-wrapper oh" style="">
-	
+
 <section class="hero-wrap section-wrap">
   <div class="container">
 	<div class="row">
 	  <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
 		<div class="bg-white border-bottom border-gray" style="padding: 30px 30px;">
-		  <h5><i class="icon icon-fingerprint pxio-sm mr-10"></i>Access My Account</h5>  
+		  <h5><i class="icon icon-map-scroll pxio-sm mr-10"></i>Add New Address</h5>  
 		</div>
 		<div class="sign-form-box">
 		  <form id="form-validation" name="form-validation" method="POST">
 		    <div class="sign-form-input">
-			  <label class="form-label">Username</label>
-			  <input id="validation-email"
-			  placeholder="Email Address"
-			  name="validation[email]"
+			  <label class="form-label">Street Address</label>
+			  <input id="validation-street-address"
+			  placeholder="Street Address"
+			  name="validation[street-address]"
 			  type="text"
-			  data-validation="[EMAIL]">
+			  data-validation="[STREET-ADDRESS]">
 		    </div>
 		    <div class="sign-form-input">
-			  <label class="form-label">Password</label>
-			  <input id="validation-password"
-			  name="validation[password]"
-			  type="password" data-validation="[L>=6]"
-			  data-validation-message="$ must be at least 6 characters"
-			  placeholder="Password">
+			  <input id="validation-street-address-2"
+			  placeholder=""
+			  name="validation[street-address-2]"
+			  type="text"
+			  data-validation="[STREET-ADDRESS-2]">
 		    </div>
+			<div class="sign-form-input">
+			  <label class="form-label">City Name</label>
+			  <input id="validation-city-name"
+			  placeholder="City Name"
+			  name="validation[city-name]"
+			  type="text"
+			  data-validation="[CITY-NAME]">
+		    </div>  
+			<div class="row">
+			  <div class="sign-form-input col-sm-6">
+			    <label class="form-label">Zip Code</label>
+			    <input id="validation-zip-code"
+			    placeholder="Zip Code"
+			    name="validation[zip-code]"
+			    type="text"
+			    data-validation="[ZIP-CODE]">
+		      </div>
+			  <div class="sign-form-input col-sm-6">
+				<label class="form-label">State</label>
+			    <select>
+				  <option value="" selected disabled>State</option>
+				  <option value="Alabama">Alabama</option>
+				  <option value="Alaska">Alaska</option>
+				  <option value="Arizona">Arizona</option>
+				  <option value="Arkansas">Arkansas</option>
+			    </select>
+		      </div>
+			</div>
+			<div class="ecommerce-shipping-fields">
+			  <input type="checkbox" id="ship-to-different-address-checkbox" class="input-checkbox" name="ship_to_different_address" value="1">
+			  <label for="ship-to-different-address-checkbox" class="checkbox">Save My Address Information?</label>
+			</div>
 		    <div class="form-actions mb-30">
-			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Sign In</span></button>
-			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>New Account</span></button>
-		    </div>
-		    <div>
-			  <span class="register-link">Forgot Your Password?<a href="#" class="ml-10">Retrieve It Now</a></span>
+			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Continue</span></button>
+			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Cancel</span></button>
 		    </div>
 		  </form>
 		</div>
@@ -397,7 +425,7 @@
 	</div>
   </div>
 </section>
-
+	
 <!-- Footer Type-1 -->
 <footer class="footer bg-lightblue">
   <div class="container">
