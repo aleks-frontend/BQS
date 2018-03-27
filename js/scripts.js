@@ -159,7 +159,7 @@
   -------------------------------------------------------*/
 
   function sidebarShow(e) {
-    var mainSidebar = $('#' + $(this).data('sidebar')), // Selecting the Sidebar depending on the 'data-sidebar' value of the sidebar trigger
+    var mainSidebar = ($(this).data('sidebar') !== undefined) ? $('#' + $(this).data('sidebar')) : $('#shopping-cart-sidebar'), // Selecting the Sidebar depending on the 'data-sidebar' value of the sidebar trigger
         mainSidebarWidth = mainSidebar.width();
 
     mainSidebar.animate({
@@ -221,8 +221,18 @@
     }
     
     if ( $(e.target).closest('.main-sidebar-nav-item-btn').hasClass('main-sidebar-nav-subitem-is-new-address') ) {
-        $('.new-address-modal__overlay').addClass('is-visible');
-        sidebarHide(e);
+      $('.new-address-modal__overlay').addClass('is-visible');
+      sidebarHide(e);
+    } else if ($(e.target).closest('.main-sidebar-nav-item-btn').hasClass('main-sidebar-nav-subitem-is-pick-up-at-store')) {      
+      $this
+        .closest('.is-main-sidebar-inner-dropdown').slideUp(300)
+        .siblings('.js-inner-dropdown-trigger').find('span').text('Pick up at store');  
+
+      $('.pickup-modal__overlay')
+        .css('display', 'block')
+        .find('.pickup-modal').addClass('is-called-from-sidemenu');
+
+      sidebarHide(e);
     } else {
       $this
         .closest('.is-main-sidebar-inner-dropdown').slideUp(300)
@@ -232,10 +242,9 @@
     e.preventDefault();    
   }
 
-  /* Testing textarea check */
-
   cartItemNotesCheck();
 
+  /* Checking if the cart item notes are empty */
   function cartItemNotesCheck() {
     if ( $('.shopping-cart-item-notes-wrapper').length > 0 ) {
       $('.shopping-cart-item-notes-wrapper').each(function(index, elem) {
@@ -251,6 +260,14 @@
       });      
     }
   }
+
+  $("#validation-card-number").keypress(function (e) {
+    if ((e.which < 48 || e.which > 57) && (e.which !== 8) && (e.which !== 0)) {
+        return false;
+    }
+
+    return true;
+  });
 
   $('.main-sidebar-nav-shopping-cart-items').on('click', '.js-inner-dropdown-trigger', innerDropdownToggler);
   $('.main-sidebar-nav-shopping-cart-items').on('click', '.js-notes-dropdown-trigger', notesDropdownToggler);  
@@ -331,19 +348,56 @@
     e.preventDefault();
   });
 
-  $('.pickup-modal__close-btn, .pickup-modal__select-button').on('click', function() {
+  $('.pickup-modal__close-btn, .pickup-modal__select-button').on('click', function(e) {
     $('.pickup-modal__overlay').fadeOut(300);
+    /* Checking if the popup was called from the sidemenu and if so, slide the sidemenu back in */
+    if ( $(this).closest('.pickup-modal').hasClass('is-called-from-sidemenu') ) {
+      $(this).closest('.pickup-modal').removeClass('is-called-from-sidemenu');
+      sidebarShow.call($(this), e);
+    }
   });
+
+  $('.pickup-modal__overlay').on('click', function(e) {
+    if ( $(e.target).closest('.pickup-modal').length == 0 ) {
+      $('.pickup-modal__overlay').fadeOut(300);
+    }
+  })
 
   /* New Address Popup Controls
   -------------------------------------------------------*/
 
   $('.new-address-modal__overlay').on('click', function(e) {
-    if ( !$(e.target).closest('.container').length > 0 ) {
+    if ( !$(e.target).closest('.new-address-modal').length > 0 ) {
       $(this).removeClass('is-visible');
       sidebarShow.call($(this), e);
     }
+  });
+
+  /* Temporary solution - for hiding the popup and form on both 'continue' and 'cancel' button click */
+  $('.new-address-modal').on('click', 'button', function(e) {
+    $('.new-address-modal__overlay').removeClass('is-visible');
+    sidebarShow.call($(this), e);
   })
+
+
+  /* Initializing the credit card input formating and expiration date - using Cleave.js
+  -------------------------------------------------------*/
+  if ( $('#validation-card-number').length > 0 ) {
+    var cleaveCreditCard = new Cleave('#validation-card-number', {
+        creditCard: true,
+        onCreditCardTypeChanged: function (type) {
+            // update UI ...
+        }
+    });     
+  }
+
+  if ( $('#validation-expiration-date').length > 0 ) {
+    var cleaveExpDate = new Cleave('#validation-expiration-date', {
+        date: true,
+        datePattern: ['m', 'y']
+    });     
+  }
+
 
   /* Full-screen Hero Height
   -------------------------------------------------------*/
@@ -623,7 +677,7 @@
             </a>\
             <ul class="main-sidebar-nav-wrap has-no-bottom-margin is-main-sidebar-inner-dropdown">\
               <li class="main-sidebar-nav-item">\
-              <a href="#" class="main-sidebar-nav-item-btn">Pick up at store</a>\
+              <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem-is-pick-up-at-store">Pick up at store</a>\
               </li>\
               <li class="main-sidebar-nav-item">\
               <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem-is-new-address">New address</a>\

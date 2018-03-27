@@ -6673,8 +6673,10 @@ height: 600px;
     display: flex;
 }
 
-.new-address-modal__overlay > .container {
+.new-address-modal {
     margin: auto;
+    width: 555px;
+    max-width: 100%;
 }
 
 /* Color Swatches / Size Options

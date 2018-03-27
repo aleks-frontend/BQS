@@ -139,9 +139,7 @@
 	</div><!-- end pickup-modal__overlay -->	
 
 	<div class="new-address-modal__overlay" data-sidebar="shopping-cart-sidebar">
-	  <div class="container">
-	<div class="row">
-	  <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+	  <div class="new-address-modal">
 		<div class="bg-white border-bottom border-gray" style="padding: 30px 30px;">
 		  <h5><i class="icon icon-map-scroll pxio-sm mr-10"></i>Add New Address</h5>  
 		</div>
@@ -195,14 +193,12 @@
 			  <label for="ship-to-different-address-checkbox" class="checkbox">Save My Address Information?</label>
 			</div>
 		    <div class="form-actions mb-30">
-			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Continue</span></button>
-			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Cancel</span></button>
+			  <button type="submit" class="btn btn-lg btn-alternative mr-10" data-sidebar="shopping-cart-sidebar"><span>Continue</span></button>
+			  <button type="submit" class="btn btn-lg btn-alternative mr-10" data-sidebar="shopping-cart-sidebar"><span>Cancel</span></button>
 		    </div>
 		  </form>
 		</div>
-	  </div>
-	</div>
-  </div>
+	  </div><!-- end new-address-modal -->
 	</div><!-- end modal__overlay -->
 
 <main class="main-wrapper">
@@ -307,7 +303,7 @@
 		  </a>
 		  <ul class="main-sidebar-nav-wrap has-no-bottom-margin is-main-sidebar-inner-dropdown">
 			<li class="main-sidebar-nav-item">
-			  <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem">Pick up at store</a>
+			  <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem main-sidebar-nav-subitem-is-pick-up-at-store">Pick up at store</a>
 			</li>
 			<li class="main-sidebar-nav-item">
 			  <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem main-sidebar-nav-subitem-is-new-address">New address</a>
