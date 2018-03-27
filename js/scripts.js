@@ -684,7 +684,7 @@
             </a>\
             <ul class="main-sidebar-nav-wrap has-no-bottom-margin is-main-sidebar-inner-dropdown">\
               <li class="main-sidebar-nav-item">\
-              <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem-is-pick-up-at-store">Pick up at store</a>\
+              <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem main-sidebar-nav-subitem-is-pick-up-at-store">Pick up at store</a>\
               </li>\
               <li class="main-sidebar-nav-item">\
               <a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem-is-new-address">New address</a>\

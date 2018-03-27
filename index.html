@@ -27,6 +27,171 @@
 
 <body class="relative">
 
+	<div class="pickup-modal__overlay modal__overlay">
+		<div class="pickup-modal">
+			<div class="pickup-modal__map" id="pickup-modal__map-1"></div><!-- end pickup-modal__map -->
+			<div class="pickup-modal__content">
+				<div class="pickup-modal__content-heading">
+					The Greenwhich Florists
+					<button class="pickup-modal__close-btn"><i class="icon icon-close-x pxio-xxs"></i></button>
+				</div><!-- end pickup-modal__content-heading -->
+				<div class="pickup-modal__content-description">
+					<p>
+						<address>
+						546 N Western Ave
+						<br>
+						Lake Forest, IL 60045
+					    </address>
+					</p>
+				</div><!-- end pickup-modal__content-description -->
+				<button class="pickup-modal__select-button">Select</button>
+			</div><!-- end pickup-modal__content -->
+		</div><!-- end pickup-modal -->
+	</div><!-- end pickup-modal__overlay -->
+
+	<div class="hand-delivery-modal__overlay modal__overlay">
+		<div class="hand-delivery-modal">
+			<div class="hand-delivery-modal__location">
+				<i class="icon icon-geolocation-pin pxio-xs mr-10 pull-left"></i> <span class="js-hand-delivery-location-dropdown-trigger">Recipient's Address</span>
+				<button class="hand-delivery-modal__close-btn"><i class="icon icon-close-x pxio-xs"></i></button>
+				<ul class="hand-delivery-modal__location-dropdown">
+					<li class="hand-delivery-modal__location-dropdown-item">
+						<a href="#">New address</a>
+					</li>
+					<li class="hand-delivery-modal__location-dropdown-item">
+						<a href="#">1020 S Beechwood Dr <i class="icon icon-geolocation-pin pxio-xs pull-right"></i></a>
+					</li>
+					<li class="hand-delivery-modal__location-dropdown-item">
+						<a href="#">1020 S Beechwood Dr <i class="icon icon-geolocation-pin pxio-xs pull-right"></i></a>
+					</li>
+					<li class="hand-delivery-modal__location-dropdown-item">
+						<a href="#">1020 S Beechwood Dr <i class="icon icon-geolocation-pin pxio-xs pull-right"></i></a>
+					</li>
+				</ul><!-- end hand-delivery-modal__location-dropdown -->
+			</div><!-- end hand-delivery-modal__location -->
+			<textarea class="hand-delivery-modal__note" placeholder="Add a Personal Note"></textarea>
+			<button class="hand-delivery-modal__submit-button">Submit</button>
+		</div><!-- end pickup-modal -->
+	</div><!-- end pickup-modal__overlay -->	
+
+	<div class="new-address-modal__overlay modal__overlay">
+	  <div class="modal-narrow">
+		<div class="bg-white border-bottom border-gray" style="padding: 30px 30px;">
+		  <h5><i class="icon icon-map-scroll pxio-sm mr-10"></i>Add New Address</h5>  
+		</div>
+		<div class="sign-form-box">
+		  <form id="form-validation" name="form-validation" method="POST">
+		    <div class="sign-form-input">
+			  <label class="form-label">Street Address</label>
+			  <input id="validation-street-address"
+			  placeholder="Street Address"
+			  name="validation[street-address]"
+			  type="text"
+			  data-validation="[STREET-ADDRESS]">
+		    </div>
+		    <div class="sign-form-input">
+			  <input id="validation-street-address-2"
+			  placeholder=""
+			  name="validation[street-address-2]"
+			  type="text"
+			  data-validation="[STREET-ADDRESS-2]">
+		    </div>
+			<div class="sign-form-input">
+			  <label class="form-label">City Name</label>
+			  <input id="validation-city-name"
+			  placeholder="City Name"
+			  name="validation[city-name]"
+			  type="text"
+			  data-validation="[CITY-NAME]">
+		    </div>  
+			<div class="row">
+			  <div class="sign-form-input col-sm-6">
+			    <label class="form-label">Zip Code</label>
+			    <input id="validation-zip-code"
+			    placeholder="Zip Code"
+			    name="validation[zip-code]"
+			    type="text"
+			    data-validation="[ZIP-CODE]">
+		      </div>
+			  <div class="sign-form-input col-sm-6">
+				<label class="form-label">State</label>
+			    <select>
+				  <option value="" selected disabled>State</option>
+				  <option value="Alabama">Alabama</option>
+				  <option value="Alaska">Alaska</option>
+				  <option value="Arizona">Arizona</option>
+				  <option value="Arkansas">Arkansas</option>
+			    </select>
+		      </div>
+			</div>
+			<div class="ecommerce-shipping-fields">
+			  <input type="checkbox" id="ship-to-different-address-checkbox" class="input-checkbox" name="ship_to_different_address" value="1">
+			  <label for="ship-to-different-address-checkbox" class="checkbox">Save My Address Information?</label>
+			</div>
+		    <div class="form-actions mb-30">
+			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Continue</span></button>
+			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Cancel</span></button>
+		    </div>
+		  </form>
+		</div>
+	  </div><!-- end modal-narrow -->
+	</div><!-- end modal__overlay -->
+
+	<div class="new-payment-modal__overlay modal__overlay">
+		<div class="modal-narrow">
+		<div class="bg-white border-bottom border-gray" style="padding: 30px 30px;">
+		  <h5><i class="icon icon-credit-card-locked pxio-sm mr-10"></i>New Payment Method</h5>  
+		</div>
+		<div class="sign-form-box">
+		  <form id="form-validation" name="form-validation" method="POST">
+		    <div class="sign-form-input">
+			  <label class="form-label">Name On Card</label>
+			  <input id="validation-name"
+			  placeholder="Full Name"
+			  name="validation[name]"
+			  type="text"
+			  data-validation="[NAME]">
+		    </div>
+		    <div class="sign-form-input">
+			  <label class="form-label">Credit Card Number</label>
+			  <input id="validation-card-number"
+			  placeholder="Card Number"
+			  name="validation[card-number]"
+			  type="text"
+			  data-validation="[CARD-NUMBER]"
+			  pattern="[0-9.]+">
+		    </div>
+			<div class="row">
+			  <div class="sign-form-input col-sm-6">
+			    <label class="form-label">Expiration Date</label>
+			    <input id="validation-expiration-date"
+			    placeholder="MM/YY"
+			    name="validation[expiration-date]"
+			    type="text"
+			    data-validation="[EXPIRATION-DATE]">
+		      </div>
+			  <div class="sign-form-input col-sm-6">
+			    <label class="form-label">CVC Code</label>
+			    <input id="validation-cvc-code"
+			    placeholder="CVC Code"
+			    name="validation[cvc-code]"
+			    type="text"
+			    data-validation="[CVC-CODE]">
+		      </div>
+			</div>
+			<div class="ecommerce-shipping-fields">
+			  <input type="checkbox" id="ship-to-different-address-checkbox" class="input-checkbox" name="ship_to_different_address" value="1">
+			  <label for="ship-to-different-address-checkbox" class="checkbox">Save My Credit Card Information?</label>
+			</div>
+		    <div class="form-actions mb-30">
+			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Place Order Now</span></button>
+			  <button type="submit" class="btn btn-lg btn-alternative mr-10"><span>Cancel</span></button>
+		    </div>
+		  </form>
+		</div>
+	  </div>		
+	</div><!-- end modal__overlay -->	
+	
 <main class="main-wrapper">
 
 <header>
@@ -220,7 +385,7 @@
 		</a>
 		<ul class="main-sidebar-nav-wrap has-no-bottom-margin is-main-sidebar-inner-dropdown">
 		  <li class="main-sidebar-nav-item">
-			<a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem">Add Payment Method</a>
+			<a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem js-add-payment-method">Add Payment Method</a>
 		  </li>
 		  <li class="main-sidebar-nav-item">
 			<a href="#" class="main-sidebar-nav-item-btn main-sidebar-nav-subitem">Mastercard ****5554
@@ -718,6 +883,7 @@
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/moment.min.js"></script>
 <script type="text/javascript" src="js/caleran.min.js"></script>
+<script type="text/javascript" src="js/cleave.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
