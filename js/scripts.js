@@ -257,7 +257,7 @@
             .closest('.shopping-cart-item-footer')
             .find('.js-notes-dropdown-trigger').removeClass('js-notes-dropdown-trigger-is-empty');  
         }
-      });      
+      });
     }
   }
 
@@ -269,11 +269,18 @@
     return true;
   });
 
-  $('.main-sidebar-nav-shopping-cart-items').on('click', '.js-inner-dropdown-trigger', innerDropdownToggler);
-  $('.main-sidebar-nav-shopping-cart-items').on('click', '.js-notes-dropdown-trigger', notesDropdownToggler);  
-  $('.main-sidebar-nav-shopping-cart-items').on('click', '.is-main-sidebar-inner-dropdown li a', setLocationLabel);
+  $('.js-add-payment-method').on('click', function(e) {
+    $('.new-payment-modal__overlay').addClass('is-visible');
+    sidebarHide(e);
 
-  $('.main-sidebar-nav-shopping-cart-items').on('click', '.js-hide-dropdown', function(e) {
+    e.preventDefault();
+  })
+
+  $('.main-sidebar-nav').on('click', '.js-inner-dropdown-trigger', innerDropdownToggler);
+  $('.main-sidebar-nav').on('click', '.js-notes-dropdown-trigger', notesDropdownToggler);  
+  $('.main-sidebar-nav').on('click', '.is-main-sidebar-inner-dropdown li a', setLocationLabel);
+
+  $('.main-sidebar-nav').on('click', '.js-hide-dropdown', function(e) {
     $(this)
       .closest('.is-main-sidebar-notes-dropdown').slideUp(300);
 
@@ -366,16 +373,16 @@
   /* New Address Popup Controls
   -------------------------------------------------------*/
 
-  $('.new-address-modal__overlay').on('click', function(e) {
-    if ( !$(e.target).closest('.new-address-modal').length > 0 ) {
+  $('.new-address-modal__overlay, .new-payment-modal__overlay').on('click', function(e) {
+    if ( !$(e.target).closest('.modal-narrow').length > 0 ) {
       $(this).removeClass('is-visible');
       sidebarShow.call($(this), e);
     }
   });
 
   /* Temporary solution - for hiding the popup and form on both 'continue' and 'cancel' button click */
-  $('.new-address-modal').on('click', 'button', function(e) {
-    $('.new-address-modal__overlay').removeClass('is-visible');
+  $('.modal-narrow').on('click', 'button', function(e) {
+    $(this).closest('.modal__overlay').removeClass('is-visible');
     sidebarShow.call($(this), e);
   })
 

@@ -6437,19 +6437,24 @@ display: none;
 
 }
 
-/* Pickup modal popup
--------------------------------------------------------*/
-.pickup-modal__overlay {
-display: none;
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background: rgba(0,0,0, 0.5);
-z-index: 997;
+.modal__overlay {
+  display: none;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0, 0.5);
+  z-index: 997;  
 }
 
+.modal__overlay.is-visible {
+  display: flex;
+}
+
+/* Pickup modal popup
+-------------------------------------------------------*/
 .pickup-modal {
 position: absolute;
 overflow: hidden;
@@ -6538,17 +6543,6 @@ height: 600px;
 
 /* Hand delivery modal popup
 -------------------------------------------------------*/
-.hand-delivery-modal__overlay {
-display: none;
-position: fixed;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background: rgba(0,0,0, 0.5);
-z-index: 997;
-}
-
 .hand-delivery-modal {
 position: absolute;
 overflow: hidden;
@@ -6656,28 +6650,20 @@ height: 600px;
 
 }
 
-/* New Address Modal Popup
+/* New Address and Pyment method Modal Popup
 -------------------------------------------------------*/
-.new-address-modal__overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0, 0.5);
-    z-index: 997;
+.modal-narrow {
+  margin: auto;
+  width: 555px;
+  max-width: 100%;
 }
 
-.new-address-modal__overlay.is-visible {
-    display: flex;
+.new-payment-modal {
+  margin: auto;
+  width: 555px;
+  max-width: 100%;
 }
 
-.new-address-modal {
-    margin: auto;
-    width: 555px;
-    max-width: 100%;
-}
 
 /* Color Swatches / Size Options
 -------------------------------------------------------*/
