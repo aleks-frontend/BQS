@@ -4148,3 +4148,8 @@ mr = (function (mr, $, window, document){
 	  return mr;
 
 }(mr, jQuery, window, document));
+
+
+//////////////// Copyright Date
+
+document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
