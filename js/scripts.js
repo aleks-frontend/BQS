@@ -198,6 +198,34 @@
   $('.sidebar-trigger').on('click', sidebarShow);
   $('.main-sidebar-btn-close').on('click', sidebarHide);
 	
+
+  /* Controling the Sidebar Filters
+  -------------------------------------------------------*/
+
+  function removeFilter(e) {
+    $(this).closest('.js-selected-filters-item').remove();
+    console.log('test');
+
+    e.preventDefault();
+  }
+
+  function addFilter() {
+    const selectedText = $(this).text();
+
+    $(this)
+      .closest('.main-sidebar')
+      .find('.selected-filters')
+        .append(`<li class="selected-filters-item js-selected-filters-item">\
+                  <span>${selectedText}</span>\
+                  <a href="#" class="selected-filters-close js-selected-filters-close">\
+                    <i class="icon icon-remove-circle pxio-xs"></i>\
+                  </a>\
+                </li>`);
+  }
+
+  $('.js-filters-group-item').on('click', addFilter);
+  $('.js-selected-filters').on('click', '.js-selected-filters-close', removeFilter);
+
   /* Toggling the visibility of the inner dropdowns inside the sidebar
   -------------------------------------------------------*/
 
