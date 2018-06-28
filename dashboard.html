@@ -429,10 +429,52 @@ chevron pattern into crisp focus.
 			<li>
 			  <a href="#" class="hidden-xs hidden-sm">Logout</a>
 			</li>
-			<li>
+			<li class="userPanel__container">
 			  <a href="#" class="txt_color_black">
-			  <i class="icon icon-user pxio-sm"></i>
+			  <i class="icon icon-user pxio-sm js-userPanel__trigger"></i>
 			  </a>
+			  <div class="userPanel js-userPanel">
+			  	<span class="userPanel__close js-userPanel__close"></span>
+			  	<div class="userPanel__header">
+			  		<img src="img/customer-avatar.png" alt="Avatar" class="userPanel__avatar" />
+			  		<div class="userPanel__info">
+			  			<div class="userPanel__name">Denis Velcany</div>
+			  			<a href="#" class="userPanel__change">Change Avatar</a>
+			  		</div><!-- end userPanel__info -->
+			  	</div><!-- end userPanel__header -->
+			  	<div class="userPanel__buttons">
+			  		<a href="#" class="userPanel__button userPanel__button--messages">
+			  			<i class="icon icon-message pxio-sm"></i>
+			  			<span>Messages</span>
+			  		</a>
+			  		<a href="#" class="userPanel__button">
+			  			<i class="icon icon-settings pxio-sm"></i>
+			  			<span>Settings</span>
+			  		</a>
+			  		<a href="#" class="userPanel__button">
+			  			<i class="icon icon-logout pxio-sm"></i>
+			  			<span>Logout</span>
+			  		</a>
+			  	</div><!-- end userPanel__buttons -->
+			  	<div class="userPanel__nav">
+			  		<a href="#" class="userPanel__navItem">
+			  			<span>Dashboard</span>
+			  			<i class="icon icon-dashboard pxio-sm"></i>
+			  		</a>
+			  		<a href="#" class="userPanel__navItem">
+			  			<span>My Orders</span>
+			  			<i class="icon icon-flat-box pxio-sm"></i>
+			  		</a>
+			  		<a href="#" class="userPanel__navItem">
+			  			<span>Address Book</span>
+			  			<i class="icon icon-address-book pxio-sm"></i>
+			  		</a>
+			  		<a href="#" class="userPanel__navItem">
+			  			<span>My Reminders</span>
+			  			<i class="icon icon-notification-note pxio-sm"></i>
+			  		</a>
+			  	</div><!-- end userPanel__nav -->
+			  </div><!-- end userPanel -->
 			</li>
 			<li>
 			  <a href="#" class="txt_color_black navigation-cart-button-wrap" data-cart-items="2">

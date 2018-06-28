@@ -2706,6 +2706,147 @@ margin-right: 10px;
 content: '$';
 }
 
+/* User Panel / Dropdown
+-------------------------------------------------------*/
+.userPanel {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 50%;
+    padding-bottom: 50px;
+    width: 400px;
+    background: #1e1f21;
+    border-radius: 5px;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 970px) {
+    .userPanel {
+        position: fixed;
+        top: 85px;
+        bottom: 0;
+        right: 0;
+        left: auto;
+        border-radius: 0;
+        transform: translate(0, 0);
+    }
+}
+
+.userPanel__container {
+    position: relative;
+}
+
+.userPanel__close {
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+    background: url(../img/user-panel-close-icon.png) no-repeat center;
+    background: red;
+}
+
+.userPanel__close:hover {
+    cursor: pointer;
+}
+
+.userPanel__header {
+    display: flex;
+    padding: 35px 28px;
+}
+
+.userPanel__avatar {
+    flex-basis: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    height: 60px;
+}
+
+.userPanel__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px 0;
+    text-align: left;
+}
+
+.userPanel__name {
+    font-size: 20px;
+    line-height: 1.16em;
+    color: #d8dbdb;
+}
+
+.userPanel__change {
+    font-size: 12px;
+    line-height: 1.16em;
+    color: #d8dbdb;
+}
+
+.userPanel__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0 20px;
+    background-color: #212223;
+}
+
+.userPanel__button {
+    padding: 0 30px;
+    text-align: center;
+}
+
+.userPanel__button--messages i.icon {
+    position: relative;
+}
+
+.userPanel__button--messages i.icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: #e94858;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+.userPanel__button i.icon {
+    color: #d8dbdb;
+}
+
+.userPanel__button span {
+    display: block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #d8dbdb;
+}
+
+.userPanel__nav {
+    margin-top: 50px;
+}
+
+.userPanel__navItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px 0 30px;
+    height: 50px;
+    font-size: 16px;
+    color: #d8dbdb;
+    border-bottom: 1px solid #2c2d2f;
+}
+
+.userPanel__navItem:hover {
+    color: #d8dbdb;
+    background: #212223;
+}
+
+.userPanel__navItem:last-child {
+    border: none;
+}
+
 /*-------------------------------------------------------*/
 /* Navigation Mobile Styles
 /*-------------------------------------------------------*/

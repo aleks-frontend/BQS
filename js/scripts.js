@@ -316,6 +316,27 @@
     e.preventDefault();
   });
 
+  /* User Dropdown Control
+  -------------------------------------------------------*/
+
+  function showUserPanel() {
+    const container = $(this).closest('.userPanel__container');
+    
+    container
+      .find('.userPanel').fadeIn(300);
+  }
+
+  function hideUserPanel() {
+    const container = $(this).closest('.userPanel__container');
+
+    container
+      .find('.userPanel').fadeOut(300);
+  }
+
+  $('.js-userPanel__trigger').on('click', showUserPanel);
+  $('.js-userPanel__close').on('click', hideUserPanel);
+  $('.js-userPanel').on('mouseleave', hideUserPanel);
+
   /* 'Hand delivery popup' Controls
   -------------------------------------------------------*/
 
