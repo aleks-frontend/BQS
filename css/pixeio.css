@@ -75,9 +75,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-address-book:before {
-  content: "\61";
-}
 .icon-books:before {
   content: "\62";
 }
@@ -345,9 +342,6 @@
 .icon-dashboard:before {
   content: "\e036";
 }
-.icon-power:before {
-  content: "\e02f";
-}
 .icon-settings:before {
   content: "\e030";
 }
@@ -374,9 +368,6 @@
 }
 .icon-open-envelope:before {
   content: "\e041";
-}
-.icon-location-pin:before {
-  content: "\e042";
 }
 .icon-compose:before {
   content: "\e043";
@@ -573,9 +564,6 @@
 .icon-forbidden:before {
   content: "\e092";
 }
-.icon-apps:before {
-  content: "\e093";
-}
 .icon-edit:before {
   content: "\e094";
 }
@@ -735,9 +723,6 @@
 .icon-write-pencil:before {
   content: "\6a";
 }
-.icon-envelope:before {
-  content: "\6e";
-}
 .icon-pen:before {
   content: "\76";
 }
@@ -776,4 +761,55 @@
 }
 .icon-filter:before {
   content: "\51";
+}
+.icon-message:before {
+  content: "\55";
+}
+.icon-closed-box:before {
+  content: "\54";
+}
+.icon-flat-package:before {
+  content: "\56";
+}
+.icon-flat-box:before {
+  content: "\57";
+}
+.icon-address-book:before {
+  content: "\58";
+}
+.icon-apps:before {
+  content: "\30";
+}
+.icon-flower-bouquet:before {
+  content: "\61";
+}
+.icon-confirm:before {
+  content: "\37";
+}
+.icon-location-pin:before {
+  content: "\38";
+}
+.icon-store-location:before {
+  content: "\21";
+}
+.icon-receipt:before {
+  content: "\23";
+}
+.icon-user-avatar:before {
+  content: "\25";
+}
+.icon-notification-note:before {
+  content: "\27";
+}
+.icon-chat:before {
+  content: "\2d";
+}
+.icon-multiple-comment:before {
+  content: "\2e";
+}
+.icon-envelope:before {
+  content: "\3e";
+}
+.icon-power:before {
+  content: "\6e";
 }

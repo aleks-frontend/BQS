@@ -1,0 +1,105 @@
+/* Common */
+.slickModal.alertMsg1 .slickWindow {
+    text-align: center;
+    overflow: hidden;
+}
+.slickModal.alertMsg1 .slickWindow:not([data-state="warning"]) {
+    color: #fff;
+}
+.slickModal.alertMsg1 .slickWindow[data-state="success"] {
+    background-color: #59bda5;
+}
+.slickModal.alertMsg1 .slickWindow[data-state="error"] {
+    background-color: #dc6868;
+}
+.slickModal.alertMsg1 .slickWindow[data-state="info"] {
+    background-color: #7cc5e8;
+}
+.slickModal.alertMsg1 .slickWindow[data-state="warning"] {
+    background-color: #f7eab7;
+    color: #333;
+}
+.slickModal.alertMsg1 .slickWindow .title {
+    font-weight: 800;
+    font-size: 24px;
+    display: block;
+    margin-top: 130px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.slickModal.alertMsg1 .slickWindow p {
+    font-size: 12px;
+    padding-bottom: 50px;
+    line-height: 20px;
+}
+.slickModal.alertMsg1 .slickWindow .title,
+.slickModal.alertMsg1 .slickWindow p {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Icons */
+.slickModal.alertMsg1 .slickWindow .title:before,
+.slickModal.alertMsg1 .slickWindow .title:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.slickModal.alertMsg1 .slickWindow:not([data-state="warning"]) .title:before {
+    top: -70px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    border: solid 2px #fff;
+}
+.slickModal.alertMsg1 .slickWindow[data-state="success"] .title:after {
+    top: -56px;
+    width: 8px;
+    height: 20px;
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.slickModal.alertMsg1 .slickWindow[data-state="error"] .title:after {
+    top: -89px;
+    font-size: 70px;
+    font-weight: 200;
+    content: "\00D7";
+}
+.slickModal.alertMsg1 .slickWindow[data-state="warning"] .title:before {
+    top: -70px;
+    width: 0;
+    height: 0;
+    border-left: 34px solid transparent;
+    border-right: 34px solid transparent;
+    border-bottom: 54px solid rgba(0,0,0,0.2);
+}
+.slickModal.alertMsg1 .slickWindow[data-state="warning"] .title:after,
+.slickModal.alertMsg1 .slickWindow[data-state="info"] .title:after {
+    content: "i";
+    font-size: 28px;
+    font-family: monospace, sans-serif;
+}
+.slickModal.alertMsg1 .slickWindow[data-state="warning"] .title:after {
+    top: -52px;
+}
+.slickModal.alertMsg1 .slickWindow[data-state="info"] .title:after {
+    top: -60px;
+}
+
+/* Cta */
+.slickModal.alertMsg1 .slickWindow .cta {
+    font-size: 12px;
+    font-weight: 800;
+    padding: 20px;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.2);
+}
+.slickModal.alertMsg1 .slickWindow .cta:hover {
+    opacity: 0.6;
+}

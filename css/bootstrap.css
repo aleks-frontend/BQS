@@ -1143,8 +1143,8 @@ img {
   border-radius: 50%;
 }
 hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   border: 0;
   border-top: 1px solid #eee;
 }
@@ -1183,8 +1183,6 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
-  line-height: 1.1;
   color: inherit;
 }
 h1 small,
@@ -1279,11 +1277,11 @@ h4,
 }
 h5,
 .h5 {
-  font-size: 14px;
+  font-size: 16px;
 }
 h6,
 .h6 {
-  font-size: 12px;
+  font-size: 14px;
 }
 p {
   margin: 0 0 10px;
@@ -1522,7 +1520,7 @@ blockquote.pull-right .small:after {
   content: '\00A0 \2014';
 }
 address {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   font-style: normal;
   line-height: 1.42857143;
 }
